@@ -2,248 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c90a291f-5501-4911-92a9-9aac05da3308" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/es5/components/VAppBar/VAppBarTitle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/es5/components/VAppBar/VAppBarTitle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/es5/components/VCalendar/util/parser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/es5/components/VCalendar/util/parser.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/es5/locale/az.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/es5/locale/az.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/es5/locale/bg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/es5/locale/bg.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/es5/locale/ckb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/es5/locale/ckb.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/components/VAppBar/VAppBarTitle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/components/VAppBar/VAppBarTitle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/components/VCalendar/util/parser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/components/VCalendar/util/parser.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/locale/az.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/locale/az.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/locale/bg.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/locale/bg.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/locale/ckb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/locale/ckb.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/VAppBar/VAppBarTitle.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/VCalendar/__tests__/VCalendarCategory.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/VCalendar/util/parser.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/locale/az.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/locale/bg.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/locale/ckb.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/vuetify.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/vuetify.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/vuetify.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/vuetify.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VAppBar/VAppBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VAppBar/VAppBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VAppBar/VAppBar.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VAppBar/VAppBar.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VAppBar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VAppBar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VAppBar/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VAppBar/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VAutocomplete/VAutocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VAutocomplete/VAutocomplete.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VAutocomplete/VAutocomplete.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VAutocomplete/VAutocomplete.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VBtn/VBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VBtn/VBtn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VBtn/VBtn.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VBtn/VBtn.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VCalendar/VCalendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VCalendar/VCalendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VCalendar/VCalendar.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VCalendar/VCalendar.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VCalendar/VCalendarCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VCalendar/VCalendarCategory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VCalendar/VCalendarCategory.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VCalendar/VCalendarCategory.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VCalendar/mixins/calendar-with-events.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VCalendar/mixins/calendar-with-events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VCalendar/mixins/calendar-with-events.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VCalendar/mixins/calendar-with-events.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VCalendar/util/props.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VCalendar/util/props.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VCalendar/util/props.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VCalendar/util/props.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VChip/VChip.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VChip/VChip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VChip/VChip.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VChip/VChip.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VColorPicker/VColorPicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VColorPicker/VColorPicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VColorPicker/VColorPicker.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VColorPicker/VColorPicker.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VCombobox/VCombobox.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VCombobox/VCombobox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VCombobox/VCombobox.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VCombobox/VCombobox.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VDataIterator/VDataIterator.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VDataIterator/VDataIterator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VDataIterator/VDataIterator.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VDataIterator/VDataIterator.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VDataTable/MobileRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VDataTable/MobileRow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VDataTable/MobileRow.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VDataTable/MobileRow.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VDataTable/Row.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VDataTable/Row.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VDataTable/Row.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VDataTable/Row.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VDataTable/VDataTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VDataTable/VDataTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VDataTable/VDataTable.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VDataTable/VDataTable.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VDatePicker/VDatePicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VDatePicker/VDatePicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VDatePicker/VDatePicker.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VDatePicker/VDatePicker.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VDatePicker/VDatePickerDateTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VDatePicker/VDatePickerDateTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VDatePicker/VDatePickerDateTable.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VDatePicker/VDatePickerDateTable.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VDatePicker/mixins/date-picker-table.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VDatePicker/mixins/date-picker-table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VDatePicker/mixins/date-picker-table.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VDatePicker/mixins/date-picker-table.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VFileInput/VFileInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VFileInput/VFileInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VFileInput/VFileInput.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VFileInput/VFileInput.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VImg/VImg.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VImg/VImg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VImg/VImg.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VImg/VImg.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VItemGroup/VItemGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VItemGroup/VItemGroup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VItemGroup/VItemGroup.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VItemGroup/VItemGroup.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VMenu/VMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VMenu/VMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VMenu/VMenu.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VMenu/VMenu.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VRangeSlider/VRangeSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VRangeSlider/VRangeSlider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VRangeSlider/VRangeSlider.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VRangeSlider/VRangeSlider.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VResponsive/VResponsive.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VResponsive/VResponsive.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VResponsive/VResponsive.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VResponsive/VResponsive.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VSelect/VSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VSelect/VSelect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VSelect/VSelect.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VSelect/VSelect.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VSnackbar/VSnackbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VSnackbar/VSnackbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VSnackbar/VSnackbar.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VSnackbar/VSnackbar.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VTextField/VTextField.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VTextField/VTextField.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VTextField/VTextField.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VTextField/VTextField.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VWindow/VWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VWindow/VWindow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/VWindow/VWindow.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/VWindow/VWindow.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/transitions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/transitions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/components/transitions/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/components/transitions/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/framework.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/framework.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/locale/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/locale/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/locale/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/locale/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/mixins/validatable/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/mixins/validatable/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/mixins/validatable/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/mixins/validatable/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/services/icons/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/services/icons/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/services/icons/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/services/icons/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/util/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/es5/util/helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/es5/util/helpers.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/es5/util/helpers.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VAppBar/VAppBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VAppBar/VAppBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VAppBar/VAppBar.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VAppBar/VAppBar.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VAppBar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VAppBar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VAppBar/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VAppBar/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VAutocomplete/VAutocomplete.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VAutocomplete/VAutocomplete.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VAutocomplete/VAutocomplete.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VAutocomplete/VAutocomplete.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VBtn/VBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VBtn/VBtn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VBtn/VBtn.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VBtn/VBtn.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VCalendar/VCalendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VCalendar/VCalendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VCalendar/VCalendar.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VCalendar/VCalendar.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VCalendar/VCalendarCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VCalendar/VCalendarCategory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VCalendar/VCalendarCategory.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VCalendar/VCalendarCategory.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VCalendar/mixins/calendar-with-events.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VCalendar/mixins/calendar-with-events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VCalendar/mixins/calendar-with-events.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VCalendar/mixins/calendar-with-events.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VCalendar/util/props.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VCalendar/util/props.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VCalendar/util/props.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VCalendar/util/props.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VChip/VChip.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VChip/VChip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VChip/VChip.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VChip/VChip.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VColorPicker/VColorPicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VColorPicker/VColorPicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VColorPicker/VColorPicker.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VColorPicker/VColorPicker.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VCombobox/VCombobox.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VCombobox/VCombobox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VCombobox/VCombobox.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VCombobox/VCombobox.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VDataIterator/VDataIterator.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VDataIterator/VDataIterator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VDataIterator/VDataIterator.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VDataIterator/VDataIterator.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VDataTable/MobileRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VDataTable/MobileRow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VDataTable/MobileRow.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VDataTable/MobileRow.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VDataTable/Row.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VDataTable/Row.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VDataTable/Row.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VDataTable/Row.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VDataTable/VDataTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VDataTable/VDataTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VDataTable/VDataTable.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VDataTable/VDataTable.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VDatePicker/VDatePicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VDatePicker/VDatePicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VDatePicker/VDatePicker.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VDatePicker/VDatePicker.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VDatePicker/VDatePickerDateTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VDatePicker/VDatePickerDateTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VDatePicker/VDatePickerDateTable.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VDatePicker/VDatePickerDateTable.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VDatePicker/mixins/date-picker-table.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VDatePicker/mixins/date-picker-table.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VDatePicker/mixins/date-picker-table.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VDatePicker/mixins/date-picker-table.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VFileInput/VFileInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VFileInput/VFileInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VFileInput/VFileInput.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VFileInput/VFileInput.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VImg/VImg.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VImg/VImg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VImg/VImg.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VImg/VImg.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VItemGroup/VItemGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VItemGroup/VItemGroup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VItemGroup/VItemGroup.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VItemGroup/VItemGroup.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VMenu/VMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VMenu/VMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VMenu/VMenu.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VMenu/VMenu.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VRangeSlider/VRangeSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VRangeSlider/VRangeSlider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VRangeSlider/VRangeSlider.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VRangeSlider/VRangeSlider.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VResponsive/VResponsive.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VResponsive/VResponsive.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VResponsive/VResponsive.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VResponsive/VResponsive.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VSelect/VSelect.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VSelect/VSelect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VSelect/VSelect.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VSelect/VSelect.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VSnackbar/VSnackbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VSnackbar/VSnackbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VSnackbar/VSnackbar.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VSnackbar/VSnackbar.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VTextField/VTextField.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VTextField/VTextField.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VTextField/VTextField.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VTextField/VTextField.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VWindow/VWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VWindow/VWindow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/VWindow/VWindow.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/VWindow/VWindow.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/transitions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/transitions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/transitions/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/transitions/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/framework.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/framework.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/locale/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/locale/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/locale/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/locale/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/mixins/validatable/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/mixins/validatable/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/mixins/validatable/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/mixins/validatable/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/services/icons/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/icons/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/services/icons/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/services/icons/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/util/helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/util/helpers.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/lib/util/helpers.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VAppBar/VAppBar.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VAppBar/VAppBar.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VAppBar/VAppBar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VAppBar/VAppBar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VAppBar/__tests__/VAppBar.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VAppBar/__tests__/VAppBar.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VAppBar/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VAppBar/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VAutocomplete/VAutocomplete.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VAutocomplete/VAutocomplete.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VAutocomplete/__tests__/VAutocomplete.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VAutocomplete/__tests__/VAutocomplete.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VAutocomplete/__tests__/VAutocomplete2.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VAutocomplete/__tests__/VAutocomplete2.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VAutocomplete/__tests__/VAutocomplete3.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VAutocomplete/__tests__/VAutocomplete3.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VBottomNavigation/VBottomNavigation.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VBottomNavigation/VBottomNavigation.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VBottomNavigation/__tests__/__snapshots__/VBottomNavigation.spec.ts.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VBottomNavigation/__tests__/__snapshots__/VBottomNavigation.spec.ts.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VBtn/VBtn.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VBtn/VBtn.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VBtn/VBtn.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VBtn/VBtn.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VBtn/__tests__/VBtn.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VBtn/__tests__/VBtn.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VBtn/__tests__/__snapshots__/VBtn.spec.ts.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VBtn/__tests__/__snapshots__/VBtn.spec.ts.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VBtn/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VBtn/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VCalendar/VCalendar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VCalendar/VCalendar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VCalendar/VCalendarCategory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VCalendar/VCalendarCategory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VCalendar/__tests__/__snapshots__/VCalendar.spec.ts.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VCalendar/__tests__/__snapshots__/VCalendar.spec.ts.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VCalendar/__tests__/__snapshots__/VCalendarDaily.spec.ts.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VCalendar/__tests__/__snapshots__/VCalendarDaily.spec.ts.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VCalendar/mixins/__tests__/calendar-with-events.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VCalendar/mixins/__tests__/calendar-with-events.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VCalendar/mixins/__tests__/calendar-with-intervals.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VCalendar/mixins/__tests__/calendar-with-intervals.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VCalendar/mixins/calendar-with-events.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VCalendar/mixins/calendar-with-events.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VCalendar/util/props.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VCalendar/util/props.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VChip/VChip.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VChip/VChip.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VChip/__tests__/VChip.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VChip/__tests__/VChip.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VChip/__tests__/__snapshots__/VChip.spec.ts.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VChip/__tests__/__snapshots__/VChip.spec.ts.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VColorPicker/VColorPicker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VColorPicker/VColorPicker.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VColorPicker/__tests__/VColorPicker.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VColorPicker/__tests__/VColorPicker.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VColorPicker/__tests__/__snapshots__/VColorPicker.spec.ts.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VColorPicker/__tests__/__snapshots__/VColorPicker.spec.ts.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VCombobox/VCombobox.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VCombobox/VCombobox.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VData/__tests__/VData.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VData/__tests__/VData.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VDataIterator/VDataIterator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VDataIterator/VDataIterator.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VDataTable/MobileRow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VDataTable/MobileRow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VDataTable/Row.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VDataTable/Row.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VDataTable/VDataTable.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VDataTable/VDataTable.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VDataTable/__tests__/Row.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VDataTable/__tests__/Row.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VDataTable/__tests__/VDataTable.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VDataTable/__tests__/VDataTable.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VDataTable/__tests__/VDataTableHeader.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VDataTable/__tests__/VDataTableHeader.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VDataTable/__tests__/__snapshots__/Row.spec.ts.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VDataTable/__tests__/__snapshots__/Row.spec.ts.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VDataTable/__tests__/__snapshots__/VDataTable.spec.ts.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VDataTable/__tests__/__snapshots__/VDataTable.spec.ts.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VDatePicker/VDatePicker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VDatePicker/VDatePicker.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VDatePicker/VDatePickerDateTable.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VDatePicker/VDatePickerDateTable.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VDatePicker/__tests__/__snapshots__/VDatePicker.date.spec.ts.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VDatePicker/__tests__/__snapshots__/VDatePicker.date.spec.ts.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VDatePicker/__tests__/__snapshots__/VDatePickerDateTable.spec.ts.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VDatePicker/__tests__/__snapshots__/VDatePickerDateTable.spec.ts.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VDatePicker/mixins/date-picker-table.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VDatePicker/mixins/date-picker-table.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VFileInput/VFileInput.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VFileInput/VFileInput.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VFileInput/__tests__/VFileInput.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VFileInput/__tests__/VFileInput.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VGrid/VGrid.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VGrid/VGrid.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VGrid/_mixins.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VGrid/_mixins.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VImg/VImg.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VImg/VImg.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VItemGroup/VItemGroup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VItemGroup/VItemGroup.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VItemGroup/__tests__/VItemGroup.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VItemGroup/__tests__/VItemGroup.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VMenu/VMenu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VMenu/VMenu.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VMenu/__tests__/VMenu.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VMenu/__tests__/VMenu.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VRangeSlider/VRangeSlider.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VRangeSlider/VRangeSlider.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VRangeSlider/__tests__/VRangeSlider.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VRangeSlider/__tests__/VRangeSlider.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VRating/__tests__/VRating.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VRating/__tests__/VRating.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VResponsive/VResponsive.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VResponsive/VResponsive.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VSelect/VSelect.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VSelect/VSelect.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VSelect/__tests__/VSelect2.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VSelect/__tests__/VSelect2.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VSelect/__tests__/VSelect4.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VSelect/__tests__/VSelect4.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VSnackbar/VSnackbar.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VSnackbar/VSnackbar.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VSnackbar/VSnackbar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VSnackbar/VSnackbar.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VTextField/VTextField.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VTextField/VTextField.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VTextField/__tests__/VTextField.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VTextField/__tests__/VTextField.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/VWindow/VWindow.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/VWindow/VWindow.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/transitions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/transitions/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/install.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locale/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/locale/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mixins/validatable/__tests__/validatable.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/mixins/validatable/__tests__/validatable.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mixins/validatable/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/mixins/validatable/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/icons/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/icons/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/elements/_code.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/elements/_code.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/generic/_transitions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/generic/_transitions.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/settings/_dark.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/settings/_dark.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/settings/_light.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/settings/_light.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/settings/_utilities.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/settings/_utilities.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/settings/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/settings/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/helpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/helpers.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -261,7 +21,7 @@
       <file leaf-file-name="lib.d.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/types/lib.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="380">
               <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
               <folding>
                 <element signature="e#92#146#0" expanded="true" />
@@ -275,16 +35,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="vuetify.min.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="vuetify.min.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dist/vuetify.min.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-              <folding>
-                <element signature="e#388801#388936#1" expanded="true" />
-                <element signature="e#389091#389226#1" expanded="true" />
-                <element signature="e#397059#397194#1" expanded="true" />
-              </folding>
+            <state relative-caret-position="440">
+              <caret line="3179" column="40" selection-start-line="3179" selection-start-column="40" selection-end-line="3179" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -292,14 +47,16 @@
       <file leaf-file-name="vuetify.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/vuetify.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-918" />
+            <state relative-caret-position="953">
+              <caret line="35776" column="35" selection-start-line="35776" selection-start-column="35" selection-end-line="35776" selection-end-column="35" />
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vuetify.min.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="vuetify.min.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/vuetify.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-40888">
+            <state>
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -309,19 +66,13 @@
       </file>
       <file leaf-file-name="index.d.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/types/index.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#86#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
+            <state relative-caret-position="1500">
               <caret line="75" column="34" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
             </state>
           </provider>
@@ -351,6 +102,7 @@
         <option value="$PROJECT_DIR$/src/install.ts" />
         <option value="$PROJECT_DIR$/src/index.ts" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/dist/vuetify.js" />
         <option value="$PROJECT_DIR$/dist/vuetify.min.css" />
       </list>
     </option>
@@ -368,7 +120,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-21" />
     <option name="width" value="927" />
     <option name="height" value="1047" />
@@ -414,7 +166,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vuetify" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -453,11 +205,12 @@
       <workItem from="1608993727122" duration="833000" />
       <workItem from="1609038892244" duration="1449000" />
       <workItem from="1609084391503" duration="3305000" />
+      <workItem from="1609760817142" duration="292000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8126000" />
+    <option name="totallyTimeSpent" value="8418000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -466,18 +219,18 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="right" id="Remote Host" order="3" />
-      <window_info anchor="bottom" id="TypeScript" order="8" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1748401" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0826226" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="TypeScript" order="8" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -687,27 +440,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
+        <state relative-caret-position="1500">
           <caret line="75" column="34" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/types/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#86#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/types/lib.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="380">
           <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
           <folding>
             <element signature="e#92#146#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/vuetify.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/vuetify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="953">
+          <caret line="35776" column="35" selection-start-line="35776" selection-start-column="35" selection-end-line="35776" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -716,27 +479,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/vuetify.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding>
-            <element signature="e#388801#388936#1" expanded="true" />
-            <element signature="e#389091#389226#1" expanded="true" />
-            <element signature="e#397059#397194#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/vuetify.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-918" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/vuetify.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-40888">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="440">
+          <caret line="3179" column="40" selection-start-line="3179" selection-start-column="40" selection-end-line="3179" selection-end-column="40" />
         </state>
       </provider>
     </entry>
