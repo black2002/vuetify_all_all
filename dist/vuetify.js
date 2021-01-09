@@ -906,6 +906,7 @@
 
             /***/ }),
 
+
         /***/ "./src/components/VAvatar/VAvatar.sass":
         /*!*********************************************!*\
   !*** ./src/components/VAvatar/VAvatar.sass ***!
@@ -1263,6 +1264,383 @@
 
             /***/ }),
 
+        /***/ "./src/components/VBanner/VBanner.sass":
+        /*!*********************************************!*\
+  !*** ./src/components/VBanner/VBanner.sass ***!
+  \*********************************************/
+        /*! no static exports found */
+        /***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+            /***/ }),
+
+        /***/ "./src/components/VBanner/VBanner.ts":
+        /*!*******************************************!*\
+  !*** ./src/components/VBanner/VBanner.ts ***!
+  \*******************************************/
+        /*! exports provided: default */
+        /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var _VBanner_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VBanner.sass */ "./src/components/VBanner/VBanner.sass");
+            /* harmony import */ var _VBanner_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_VBanner_sass__WEBPACK_IMPORTED_MODULE_0__);
+            /* harmony import */ var _VSheet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../VSheet */ "./src/components/VSheet/index.ts");
+            /* harmony import */ var _VAvatar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../VAvatar */ "./src/components/VAvatar/index.ts");
+            /* harmony import */ var _VIcon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../VIcon */ "./src/components/VIcon/index.ts");
+            /* harmony import */ var _transitions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../transitions */ "./src/components/transitions/index.ts");
+            /* harmony import */ var _mixins_mobile__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../mixins/mobile */ "./src/mixins/mobile/index.ts");
+            /* harmony import */ var _mixins_toggleable__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../mixins/toggleable */ "./src/mixins/toggleable/index.ts");
+            /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
+            /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
+            var __assign = undefined && undefined.__assign || function () {
+                __assign = Object.assign || function (t) {
+                    for (var s, i = 1, n = arguments.length; i < n; i++) {
+                        s = arguments[i];
+
+                        for (var p in s) {
+                            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+                        }
+                    }
+
+                    return t;
+                };
+
+                return __assign.apply(this, arguments);
+            }; // Styles
+
+
+            // Extensions
+
+            // Components
+
+
+
+            // Mixins
+
+
+            // Utilities
+
+
+
+            /* @vue/component */
+
+            /* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_7__["default"])(_VSheet__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_mobile__WEBPACK_IMPORTED_MODULE_5__["default"], _mixins_toggleable__WEBPACK_IMPORTED_MODULE_6__["default"]).extend({
+                name: 'v-banner',
+                inheritAttrs: false,
+                props: {
+                    app: Boolean,
+                    icon: String,
+                    iconColor: String,
+                    singleLine: Boolean,
+                    sticky: Boolean,
+                    value: {
+                        type: Boolean,
+                        default: true
+                    }
+                },
+                computed: {
+                    classes: function classes() {
+                        return __assign(__assign({}, _VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
+                            'v-banner--has-icon': this.hasIcon,
+                            'v-banner--is-mobile': this.isMobile,
+                            'v-banner--single-line': this.singleLine,
+                            'v-banner--sticky': this.isSticky
+                        });
+                    },
+                    hasIcon: function hasIcon() {
+                        return Boolean(this.icon || this.$slots.icon);
+                    },
+                    isSticky: function isSticky() {
+                        return this.sticky || this.app;
+                    },
+                    styles: function styles() {
+                        var styles = __assign({}, _VSheet__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.styles.call(this));
+
+                        if (this.isSticky) {
+                            var top = !this.app ? 0 : this.$vuetify.application.bar + this.$vuetify.application.top;
+                            styles.top = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_8__["convertToUnit"])(top);
+                            styles.position = 'sticky';
+                            styles.zIndex = 1;
+                        }
+
+                        return styles;
+                    }
+                },
+                methods: {
+                    /** @public */
+                    toggle: function toggle() {
+                        this.isActive = !this.isActive;
+                    },
+                    iconClick: function iconClick(e) {
+                        this.$emit('click:icon', e);
+                    },
+                    genIcon: function genIcon() {
+                        if (!this.hasIcon) return undefined;
+                        var content;
+
+                        if (this.icon) {
+                            content = this.$createElement(_VIcon__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                                props: {
+                                    color: this.iconColor,
+                                    size: 28
+                                }
+                            }, [this.icon]);
+                        } else {
+                            content = this.$slots.icon;
+                        }
+
+                        return this.$createElement(_VAvatar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+                            staticClass: 'v-banner__icon',
+                            props: {
+                                color: this.color,
+                                size: 40
+                            },
+                            on: {
+                                click: this.iconClick
+                            }
+                        }, [content]);
+                    },
+                    genText: function genText() {
+                        return this.$createElement('div', {
+                            staticClass: 'v-banner__text'
+                        }, this.$slots.default);
+                    },
+                    genActions: function genActions() {
+                        var _this = this;
+
+                        var children = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_8__["getSlot"])(this, 'actions', {
+                            dismiss: function dismiss() {
+                                return _this.isActive = false;
+                            }
+                        });
+                        if (!children) return undefined;
+                        return this.$createElement('div', {
+                            staticClass: 'v-banner__actions'
+                        }, children);
+                    },
+                    genContent: function genContent() {
+                        return this.$createElement('div', {
+                            staticClass: 'v-banner__content'
+                        }, [this.genIcon(), this.genText()]);
+                    },
+                    genWrapper: function genWrapper() {
+                        return this.$createElement('div', {
+                            staticClass: 'v-banner__wrapper'
+                        }, [this.genContent(), this.genActions()]);
+                    }
+                },
+                render: function render(h) {
+                    return h(_transitions__WEBPACK_IMPORTED_MODULE_4__["VExpandTransition"], [h('div', this.setBackgroundColor(this.color, {
+                        staticClass: 'v-banner',
+                        attrs: this.attrs$,
+                        class: this.classes,
+                        style: this.styles,
+                        directives: [{
+                            name: 'show',
+                            value: this.isActive
+                        }]
+                    }), [this.genWrapper()])]);
+                }
+            }));
+
+            /***/ }),
+
+        /***/ "./src/components/VBanner/index.ts":
+        /*!*****************************************!*\
+  !*** ./src/components/VBanner/index.ts ***!
+  \*****************************************/
+        /*! exports provided: VBanner, default */
+        /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var _VBanner__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VBanner */ "./src/components/VBanner/VBanner.ts");
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VBanner", function() { return _VBanner__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+            /* harmony default export */ __webpack_exports__["default"] = (_VBanner__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+            /***/ }),
+
+        /***/ "./src/components/VBottomNavigation/VBottomNavigation.sass":
+        /*!*****************************************************************!*\
+  !*** ./src/components/VBottomNavigation/VBottomNavigation.sass ***!
+  \*****************************************************************/
+        /*! no static exports found */
+        /***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+            /***/ }),
+
+        /***/ "./src/components/VBottomNavigation/VBottomNavigation.ts":
+        /*!***************************************************************!*\
+  !*** ./src/components/VBottomNavigation/VBottomNavigation.ts ***!
+  \***************************************************************/
+        /*! exports provided: default */
+        /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var _VBottomNavigation_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VBottomNavigation.sass */ "./src/components/VBottomNavigation/VBottomNavigation.sass");
+            /* harmony import */ var _VBottomNavigation_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_VBottomNavigation_sass__WEBPACK_IMPORTED_MODULE_0__);
+            /* harmony import */ var _mixins_applicationable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/applicationable */ "./src/mixins/applicationable/index.ts");
+            /* harmony import */ var _mixins_button_group__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/button-group */ "./src/mixins/button-group/index.ts");
+            /* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable/index.ts");
+            /* harmony import */ var _mixins_measurable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/measurable */ "./src/mixins/measurable/index.ts");
+            /* harmony import */ var _mixins_proxyable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../mixins/proxyable */ "./src/mixins/proxyable/index.ts");
+            /* harmony import */ var _mixins_scrollable__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../mixins/scrollable */ "./src/mixins/scrollable/index.ts");
+            /* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable/index.ts");
+            /* harmony import */ var _mixins_toggleable__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../mixins/toggleable */ "./src/mixins/toggleable/index.ts");
+            /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
+            /* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../util/console */ "./src/util/console.ts");
+            var __assign = undefined && undefined.__assign || function () {
+                __assign = Object.assign || function (t) {
+                    for (var s, i = 1, n = arguments.length; i < n; i++) {
+                        s = arguments[i];
+
+                        for (var p in s) {
+                            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+                        }
+                    }
+
+                    return t;
+                };
+
+                return __assign.apply(this, arguments);
+            }; // Styles
+
+
+            // Mixins
+
+
+
+
+
+
+
+
+            // Utilities
+
+
+
+            /* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_9__["default"])(Object(_mixins_applicationable__WEBPACK_IMPORTED_MODULE_1__["default"])('bottom', ['height', 'inputValue']), _mixins_colorable__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_measurable__WEBPACK_IMPORTED_MODULE_4__["default"], Object(_mixins_toggleable__WEBPACK_IMPORTED_MODULE_8__["factory"])('inputValue'), _mixins_proxyable__WEBPACK_IMPORTED_MODULE_5__["default"], _mixins_scrollable__WEBPACK_IMPORTED_MODULE_6__["default"], _mixins_themeable__WEBPACK_IMPORTED_MODULE_7__["default"]
+                /* @vue/component */
+            ).extend({
+                name: 'v-bottom-navigation',
+                props: {
+                    activeClass: {
+                        type: String,
+                        default: 'v-btn--active'
+                    },
+                    backgroundColor: String,
+                    grow: Boolean,
+                    height: {
+                        type: [Number, String],
+                        default: 56
+                    },
+                    hideOnScroll: Boolean,
+                    horizontal: Boolean,
+                    inputValue: {
+                        type: Boolean,
+                        default: true
+                    },
+                    mandatory: Boolean,
+                    shift: Boolean
+                },
+                data: function data() {
+                    return {
+                        isActive: this.inputValue
+                    };
+                },
+                computed: {
+                    canScroll: function canScroll() {
+                        return _mixins_scrollable__WEBPACK_IMPORTED_MODULE_6__["default"].options.computed.canScroll.call(this) && (this.hideOnScroll || !this.inputValue);
+                    },
+                    classes: function classes() {
+                        return {
+                            'v-bottom-navigation--absolute': this.absolute,
+                            'v-bottom-navigation--grow': this.grow,
+                            'v-bottom-navigation--fixed': !this.absolute && (this.app || this.fixed),
+                            'v-bottom-navigation--horizontal': this.horizontal,
+                            'v-bottom-navigation--shift': this.shift
+                        };
+                    },
+                    styles: function styles() {
+                        return __assign(__assign({}, this.measurableStyles), {
+                            transform: this.isActive ? 'none' : 'translateY(100%)'
+                        });
+                    }
+                },
+                created: function created() {
+                    /* istanbul ignore next */
+                    if (this.$attrs.hasOwnProperty('active')) {
+                        Object(_util_console__WEBPACK_IMPORTED_MODULE_10__["breaking"])('active.sync', 'value or v-model', this);
+                    }
+                },
+                methods: {
+                    thresholdMet: function thresholdMet() {
+                        this.isActive = !this.isScrollingUp;
+                        this.$emit('update:input-value', this.isActive);
+                    },
+                    updateApplication: function updateApplication() {
+                        return this.$el ? this.$el.clientHeight : 0;
+                    },
+                    updateValue: function updateValue(val) {
+                        this.$emit('change', val);
+                    }
+                },
+                render: function render(h) {
+                    var data = this.setBackgroundColor(this.backgroundColor, {
+                        staticClass: 'v-bottom-navigation',
+                        class: this.classes,
+                        style: this.styles,
+                        props: {
+                            activeClass: this.activeClass,
+                            mandatory: Boolean(this.mandatory || this.value !== undefined),
+                            value: this.internalValue
+                        },
+                        on: {
+                            change: this.updateValue
+                        }
+                    });
+
+                    if (this.canScroll) {
+                        data.directives = data.directives || [];
+                        data.directives.push({
+                            arg: this.scrollTarget,
+                            name: 'scroll',
+                            value: this.onScroll
+                        });
+                    }
+
+                    return h(_mixins_button_group__WEBPACK_IMPORTED_MODULE_2__["default"], this.setTextColor(this.color, data), this.$slots.default);
+                }
+            }));
+
+            /***/ }),
+
+        /***/ "./src/components/VBottomNavigation/index.ts":
+        /*!***************************************************!*\
+  !*** ./src/components/VBottomNavigation/index.ts ***!
+  \***************************************************/
+        /*! exports provided: VBottomNavigation, default */
+        /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var _VBottomNavigation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VBottomNavigation */ "./src/components/VBottomNavigation/VBottomNavigation.ts");
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VBottomNavigation", function() { return _VBottomNavigation__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+            /* harmony default export */ __webpack_exports__["default"] = (_VBottomNavigation__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+            /***/ }),
+
         /***/ "./src/components/VBottomSheet/VBottomSheet.sass":
         /*!*******************************************************!*\
   !*** ./src/components/VBottomSheet/VBottomSheet.sass ***!
@@ -1608,6 +1986,7 @@
             /* harmony default export */ __webpack_exports__["default"] = (_VBtn__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
             /***/ }),
+
 
         /***/ "./src/components/VCard/VCard.sass":
         /*!*****************************************!*\
@@ -2100,6 +2479,309 @@
 
             /***/ }),
 
+        /***/ "./src/components/VCheckbox/VCheckbox.sass":
+        /*!*************************************************!*\
+  !*** ./src/components/VCheckbox/VCheckbox.sass ***!
+  \*************************************************/
+        /*! no static exports found */
+        /***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+            /***/ }),
+
+        /***/ "./src/components/VCheckbox/VCheckbox.ts":
+        /*!***********************************************!*\
+  !*** ./src/components/VCheckbox/VCheckbox.ts ***!
+  \***********************************************/
+        /*! exports provided: default */
+        /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var _VCheckbox_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VCheckbox.sass */ "./src/components/VCheckbox/VCheckbox.sass");
+            /* harmony import */ var _VCheckbox_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_VCheckbox_sass__WEBPACK_IMPORTED_MODULE_0__);
+            /* harmony import */ var _styles_components_selection_controls_sass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../styles/components/_selection-controls.sass */ "./src/styles/components/_selection-controls.sass");
+            /* harmony import */ var _styles_components_selection_controls_sass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_styles_components_selection_controls_sass__WEBPACK_IMPORTED_MODULE_1__);
+            /* harmony import */ var _VIcon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../VIcon */ "./src/components/VIcon/index.ts");
+            /* harmony import */ var _VInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../VInput */ "./src/components/VInput/index.ts");
+            /* harmony import */ var _mixins_selectable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/selectable */ "./src/mixins/selectable/index.ts");
+            var __assign = undefined && undefined.__assign || function () {
+                __assign = Object.assign || function (t) {
+                    for (var s, i = 1, n = arguments.length; i < n; i++) {
+                        s = arguments[i];
+
+                        for (var p in s) {
+                            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+                        }
+                    }
+
+                    return t;
+                };
+
+                return __assign.apply(this, arguments);
+            }; // Styles
+
+
+
+            // Components
+
+
+            // Mixins
+
+
+            /* @vue/component */
+
+            /* harmony default export */ __webpack_exports__["default"] = (_mixins_selectable__WEBPACK_IMPORTED_MODULE_4__["default"].extend({
+                name: 'v-checkbox',
+                props: {
+                    indeterminate: Boolean,
+                    indeterminateIcon: {
+                        type: String,
+                        default: '$checkboxIndeterminate'
+                    },
+                    offIcon: {
+                        type: String,
+                        default: '$checkboxOff'
+                    },
+                    onIcon: {
+                        type: String,
+                        default: '$checkboxOn'
+                    }
+                },
+                data: function data() {
+                    return {
+                        inputIndeterminate: this.indeterminate
+                    };
+                },
+                computed: {
+                    classes: function classes() {
+                        return __assign(__assign({}, _VInput__WEBPACK_IMPORTED_MODULE_3__["default"].options.computed.classes.call(this)), {
+                            'v-input--selection-controls': true,
+                            'v-input--checkbox': true,
+                            'v-input--indeterminate': this.inputIndeterminate
+                        });
+                    },
+                    computedIcon: function computedIcon() {
+                        if (this.inputIndeterminate) {
+                            return this.indeterminateIcon;
+                        } else if (this.isActive) {
+                            return this.onIcon;
+                        } else {
+                            return this.offIcon;
+                        }
+                    },
+                    // Do not return undefined if disabled,
+                    // according to spec, should still show
+                    // a color when disabled and active
+                    validationState: function validationState() {
+                        if (this.isDisabled && !this.inputIndeterminate) return undefined;
+                        if (this.hasError && this.shouldValidate) return 'error';
+                        if (this.hasSuccess) return 'success';
+                        if (this.hasColor !== null) return this.computedColor;
+                        return undefined;
+                    }
+                },
+                watch: {
+                    indeterminate: function indeterminate(val) {
+                        var _this = this; // https://github.com/vuetifyjs/vuetify/issues/8270
+
+
+                        this.$nextTick(function () {
+                            return _this.inputIndeterminate = val;
+                        });
+                    },
+                    inputIndeterminate: function inputIndeterminate(val) {
+                        this.$emit('update:indeterminate', val);
+                    },
+                    isActive: function isActive() {
+                        if (!this.indeterminate) return;
+                        this.inputIndeterminate = false;
+                    }
+                },
+                methods: {
+                    genCheckbox: function genCheckbox() {
+                        return this.$createElement('div', {
+                            staticClass: 'v-input--selection-controls__input'
+                        }, [this.$createElement(_VIcon__WEBPACK_IMPORTED_MODULE_2__["default"], this.setTextColor(this.validationState, {
+                            props: {
+                                dense: this.dense,
+                                dark: this.dark,
+                                light: this.light
+                            }
+                        }), this.computedIcon), this.genInput('checkbox', __assign(__assign({}, this.attrs$), {
+                            'aria-checked': this.inputIndeterminate ? 'mixed' : this.isActive.toString()
+                        })), this.genRipple(this.setTextColor(this.rippleState))]);
+                    },
+                    genDefaultSlot: function genDefaultSlot() {
+                        return [this.genCheckbox(), this.genLabel()];
+                    }
+                }
+            }));
+
+            /***/ }),
+
+        /***/ "./src/components/VCheckbox/VSimpleCheckbox.sass":
+        /*!*******************************************************!*\
+  !*** ./src/components/VCheckbox/VSimpleCheckbox.sass ***!
+  \*******************************************************/
+        /*! no static exports found */
+        /***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+            /***/ }),
+
+        /***/ "./src/components/VCheckbox/VSimpleCheckbox.ts":
+        /*!*****************************************************!*\
+  !*** ./src/components/VCheckbox/VSimpleCheckbox.ts ***!
+  \*****************************************************/
+        /*! exports provided: default */
+        /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var _VSimpleCheckbox_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VSimpleCheckbox.sass */ "./src/components/VCheckbox/VSimpleCheckbox.sass");
+            /* harmony import */ var _VSimpleCheckbox_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_VSimpleCheckbox_sass__WEBPACK_IMPORTED_MODULE_0__);
+            /* harmony import */ var _directives_ripple__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../directives/ripple */ "./src/directives/ripple/index.ts");
+            /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "vue");
+            /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_2__);
+            /* harmony import */ var _VIcon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../VIcon */ "./src/components/VIcon/index.ts");
+            /* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable/index.ts");
+            /* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable/index.ts");
+            /* harmony import */ var _util_mergeData__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../util/mergeData */ "./src/util/mergeData.ts");
+            /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
+            var __assign = undefined && undefined.__assign || function () {
+                __assign = Object.assign || function (t) {
+                    for (var s, i = 1, n = arguments.length; i < n; i++) {
+                        s = arguments[i];
+
+                        for (var p in s) {
+                            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+                        }
+                    }
+
+                    return t;
+                };
+
+                return __assign.apply(this, arguments);
+            };
+
+
+
+
+            // Mixins
+
+
+            // Utilities
+
+
+
+            /* harmony default export */ __webpack_exports__["default"] = (vue__WEBPACK_IMPORTED_MODULE_2___default.a.extend({
+                name: 'v-simple-checkbox',
+                functional: true,
+                directives: {
+                    ripple: _directives_ripple__WEBPACK_IMPORTED_MODULE_1__["default"]
+                },
+                props: __assign(__assign(__assign({}, _mixins_colorable__WEBPACK_IMPORTED_MODULE_4__["default"].options.props), _mixins_themeable__WEBPACK_IMPORTED_MODULE_5__["default"].options.props), {
+                    disabled: Boolean,
+                    ripple: {
+                        type: Boolean,
+                        default: true
+                    },
+                    value: Boolean,
+                    indeterminate: Boolean,
+                    indeterminateIcon: {
+                        type: String,
+                        default: '$checkboxIndeterminate'
+                    },
+                    onIcon: {
+                        type: String,
+                        default: '$checkboxOn'
+                    },
+                    offIcon: {
+                        type: String,
+                        default: '$checkboxOff'
+                    }
+                }),
+                render: function render(h, _a) {
+                    var props = _a.props,
+                        data = _a.data,
+                        listeners = _a.listeners;
+                    var children = [];
+
+                    if (props.ripple && !props.disabled) {
+                        var ripple_1 = h('div', _mixins_colorable__WEBPACK_IMPORTED_MODULE_4__["default"].options.methods.setTextColor(props.color, {
+                            staticClass: 'v-input--selection-controls__ripple',
+                            directives: [{
+                                name: 'ripple',
+                                value: {
+                                    center: true
+                                }
+                            }]
+                        }));
+                        children.push(ripple_1);
+                    }
+
+                    var icon = props.offIcon;
+                    if (props.indeterminate) icon = props.indeterminateIcon;else if (props.value) icon = props.onIcon;
+                    children.push(h(_VIcon__WEBPACK_IMPORTED_MODULE_3__["VIcon"], _mixins_colorable__WEBPACK_IMPORTED_MODULE_4__["default"].options.methods.setTextColor(props.value && props.color, {
+                        props: {
+                            disabled: props.disabled,
+                            dark: props.dark,
+                            light: props.light
+                        }
+                    }), icon));
+                    var classes = {
+                        'v-simple-checkbox': true,
+                        'v-simple-checkbox--disabled': props.disabled
+                    };
+                    return h('div', Object(_util_mergeData__WEBPACK_IMPORTED_MODULE_6__["default"])(data, {
+                        class: classes,
+                        on: {
+                            click: function click(e) {
+                                e.stopPropagation();
+
+                                if (data.on && data.on.input && !props.disabled) {
+                                    Object(_util_helpers__WEBPACK_IMPORTED_MODULE_7__["wrapInArray"])(data.on.input).forEach(function (f) {
+                                        return f(!props.value);
+                                    });
+                                }
+                            }
+                        }
+                    }), children);
+                }
+            }));
+
+            /***/ }),
+
+        /***/ "./src/components/VCheckbox/index.ts":
+        /*!*******************************************!*\
+  !*** ./src/components/VCheckbox/index.ts ***!
+  \*******************************************/
+        /*! exports provided: VCheckbox, VSimpleCheckbox, default */
+        /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var _VCheckbox__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VCheckbox */ "./src/components/VCheckbox/VCheckbox.ts");
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VCheckbox", function() { return _VCheckbox__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+            /* harmony import */ var _VSimpleCheckbox__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VSimpleCheckbox */ "./src/components/VCheckbox/VSimpleCheckbox.ts");
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VSimpleCheckbox", function() { return _VSimpleCheckbox__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+
+
+
+
+            /* harmony default export */ __webpack_exports__["default"] = ({
+                $_vuetify_subcomponents: {
+                    VCheckbox: _VCheckbox__WEBPACK_IMPORTED_MODULE_0__["default"],
+                    VSimpleCheckbox: _VSimpleCheckbox__WEBPACK_IMPORTED_MODULE_1__["default"]
+                }
+            });
+
+            /***/ }),
+
         /***/ "./src/components/VChip/VChip.sass":
         /*!*****************************************!*\
   !*** ./src/components/VChip/VChip.sass ***!
@@ -2467,7 +3149,6 @@
 
             /***/ }),
 
-
         /***/ "./src/components/VContent/VContent.ts":
         /*!*********************************************!*\
   !*** ./src/components/VContent/VContent.ts ***!
@@ -2518,6 +3199,97 @@
 
             /***/ }),
 
+        /***/ "./src/components/VCounter/VCounter.sass":
+        /*!***********************************************!*\
+  !*** ./src/components/VCounter/VCounter.sass ***!
+  \***********************************************/
+        /*! no static exports found */
+        /***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+            /***/ }),
+
+        /***/ "./src/components/VCounter/VCounter.ts":
+        /*!*********************************************!*\
+  !*** ./src/components/VCounter/VCounter.ts ***!
+  \*********************************************/
+        /*! exports provided: default */
+        /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var _VCounter_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VCounter.sass */ "./src/components/VCounter/VCounter.sass");
+            /* harmony import */ var _VCounter_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_VCounter_sass__WEBPACK_IMPORTED_MODULE_0__);
+            /* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable/index.ts");
+            /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
+            var __assign = undefined && undefined.__assign || function () {
+                __assign = Object.assign || function (t) {
+                    for (var s, i = 1, n = arguments.length; i < n; i++) {
+                        s = arguments[i];
+
+                        for (var p in s) {
+                            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+                        }
+                    }
+
+                    return t;
+                };
+
+                return __assign.apply(this, arguments);
+            }; // Styles
+
+
+            // Mixins
+
+
+
+            /* @vue/component */
+
+            /* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_2__["default"])(_mixins_themeable__WEBPACK_IMPORTED_MODULE_1__["default"]).extend({
+                name: 'v-counter',
+                functional: true,
+                props: {
+                    value: {
+                        type: [Number, String],
+                        default: ''
+                    },
+                    max: [Number, String]
+                },
+                render: function render(h, ctx) {
+                    var props = ctx.props;
+                    var max = parseInt(props.max, 10);
+                    var value = parseInt(props.value, 10);
+                    var content = max ? value + " / " + max : String(props.value);
+                    var isGreater = max && value > max;
+                    return h('div', {
+                        staticClass: 'v-counter',
+                        class: __assign({
+                            'error--text': isGreater
+                        }, Object(_mixins_themeable__WEBPACK_IMPORTED_MODULE_1__["functionalThemeClasses"])(ctx))
+                    }, content);
+                }
+            }));
+
+            /***/ }),
+
+        /***/ "./src/components/VCounter/index.ts":
+        /*!******************************************!*\
+  !*** ./src/components/VCounter/index.ts ***!
+  \******************************************/
+        /*! exports provided: VCounter, default */
+        /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var _VCounter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VCounter */ "./src/components/VCounter/VCounter.ts");
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VCounter", function() { return _VCounter__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+            /* harmony default export */ __webpack_exports__["default"] = (_VCounter__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+            /***/ }),
 
         /***/ "./src/components/VDialog/VDialog.sass":
         /*!*********************************************!*\
@@ -3460,371 +4232,6 @@
                     VExpansionPanelContent: _VExpansionPanelContent__WEBPACK_IMPORTED_MODULE_2__["default"]
                 }
             });
-
-            /***/ }),
-
-        /***/ "./src/components/VFileInput/VFileInput.sass":
-        /*!***************************************************!*\
-  !*** ./src/components/VFileInput/VFileInput.sass ***!
-  \***************************************************/
-        /*! no static exports found */
-        /***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-            /***/ }),
-
-        /***/ "./src/components/VFileInput/VFileInput.ts":
-        /*!*************************************************!*\
-  !*** ./src/components/VFileInput/VFileInput.ts ***!
-  \*************************************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony import */ var _VFileInput_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VFileInput.sass */ "./src/components/VFileInput/VFileInput.sass");
-            /* harmony import */ var _VFileInput_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_VFileInput_sass__WEBPACK_IMPORTED_MODULE_0__);
-            /* harmony import */ var _VTextField__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../VTextField */ "./src/components/VTextField/index.ts");
-            /* harmony import */ var _VChip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../VChip */ "./src/components/VChip/index.ts");
-            /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
-            /* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../util/console */ "./src/util/console.ts");
-            /* harmony import */ var _util_mergeData__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../util/mergeData */ "./src/util/mergeData.ts");
-            function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-            var __assign = undefined && undefined.__assign || function () {
-                __assign = Object.assign || function (t) {
-                    for (var s, i = 1, n = arguments.length; i < n; i++) {
-                        s = arguments[i];
-
-                        for (var p in s) {
-                            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-                        }
-                    }
-
-                    return t;
-                };
-
-                return __assign.apply(this, arguments);
-            };
-
-            var __read = undefined && undefined.__read || function (o, n) {
-                var m = typeof Symbol === "function" && o[Symbol.iterator];
-                if (!m) return o;
-                var i = m.call(o),
-                    r,
-                    ar = [],
-                    e;
-
-                try {
-                    while ((n === void 0 || n-- > 0) && !(r = i.next()).done) {
-                        ar.push(r.value);
-                    }
-                } catch (error) {
-                    e = {
-                        error: error
-                    };
-                } finally {
-                    try {
-                        if (r && !r.done && (m = i["return"])) m.call(i);
-                    } finally {
-                        if (e) throw e.error;
-                    }
-                }
-
-                return ar;
-            };
-
-            var __spread = undefined && undefined.__spread || function () {
-                for (var ar = [], i = 0; i < arguments.length; i++) {
-                    ar = ar.concat(__read(arguments[i]));
-                }
-
-                return ar;
-            }; // Styles
-
-
-            // Extensions
-
-            // Components
-
-            // Utilities
-
-
-
-
-            /* harmony default export */ __webpack_exports__["default"] = (_VTextField__WEBPACK_IMPORTED_MODULE_1__["default"].extend({
-                name: 'v-file-input',
-                model: {
-                    prop: 'value',
-                    event: 'change'
-                },
-                props: {
-                    chips: Boolean,
-                    clearable: {
-                        type: Boolean,
-                        default: true
-                    },
-                    counterSizeString: {
-                        type: String,
-                        default: '$vuetify.fileInput.counterSize'
-                    },
-                    counterString: {
-                        type: String,
-                        default: '$vuetify.fileInput.counter'
-                    },
-                    hideInput: Boolean,
-                    placeholder: String,
-                    prependIcon: {
-                        type: String,
-                        default: '$file'
-                    },
-                    readonly: {
-                        type: Boolean,
-                        default: false
-                    },
-                    showSize: {
-                        type: [Boolean, Number],
-                        default: false,
-                        validator: function validator(v) {
-                            return typeof v === 'boolean' || [1000, 1024].includes(v);
-                        }
-                    },
-                    smallChips: Boolean,
-                    truncateLength: {
-                        type: [Number, String],
-                        default: 22
-                    },
-                    type: {
-                        type: String,
-                        default: 'file'
-                    },
-                    value: {
-                        default: undefined,
-                        validator: function validator(val) {
-                            return Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["wrapInArray"])(val).every(function (v) {
-                                return v != null && _typeof(v) === 'object';
-                            });
-                        }
-                    }
-                },
-                computed: {
-                    classes: function classes() {
-                        return __assign(__assign({}, _VTextField__WEBPACK_IMPORTED_MODULE_1__["default"].options.computed.classes.call(this)), {
-                            'v-file-input': true
-                        });
-                    },
-                    computedCounterValue: function computedCounterValue() {
-                        var fileCount = this.isMultiple && this.lazyValue ? this.lazyValue.length : this.lazyValue instanceof File ? 1 : 0;
-                        if (!this.showSize) return this.$vuetify.lang.t(this.counterString, fileCount);
-                        var bytes = this.internalArrayValue.reduce(function (bytes, _a) {
-                            var _b = _a.size,
-                                size = _b === void 0 ? 0 : _b;
-                            return bytes + size;
-                        }, 0);
-                        return this.$vuetify.lang.t(this.counterSizeString, fileCount, Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["humanReadableFileSize"])(bytes, this.base === 1024));
-                    },
-                    internalArrayValue: function internalArrayValue() {
-                        return Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["wrapInArray"])(this.internalValue);
-                    },
-                    internalValue: {
-                        get: function get() {
-                            return this.lazyValue;
-                        },
-                        set: function set(val) {
-                            this.lazyValue = val;
-                            this.$emit('change', this.lazyValue);
-                        }
-                    },
-                    isDirty: function isDirty() {
-                        return this.internalArrayValue.length > 0;
-                    },
-                    isLabelActive: function isLabelActive() {
-                        return this.isDirty;
-                    },
-                    isMultiple: function isMultiple() {
-                        return this.$attrs.hasOwnProperty('multiple');
-                    },
-                    text: function text() {
-                        var _this = this;
-
-                        if (!this.isDirty) return [this.placeholder];
-                        return this.internalArrayValue.map(function (file) {
-                            var _a = file.name,
-                                name = _a === void 0 ? '' : _a,
-                                _b = file.size,
-                                size = _b === void 0 ? 0 : _b;
-
-                            var truncatedText = _this.truncateText(name);
-
-                            return !_this.showSize ? truncatedText : truncatedText + " (" + Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["humanReadableFileSize"])(size, _this.base === 1024) + ")";
-                        });
-                    },
-                    base: function base() {
-                        return typeof this.showSize !== 'boolean' ? this.showSize : undefined;
-                    },
-                    hasChips: function hasChips() {
-                        return this.chips || this.smallChips;
-                    }
-                },
-                watch: {
-                    readonly: {
-                        handler: function handler(v) {
-                            if (v === true) Object(_util_console__WEBPACK_IMPORTED_MODULE_4__["consoleError"])('readonly is not supported on <v-file-input>', this);
-                        },
-                        immediate: true
-                    },
-                    value: function value(v) {
-                        var value = this.isMultiple ? v : v ? [v] : [];
-
-                        if (!Object(_util_helpers__WEBPACK_IMPORTED_MODULE_3__["deepEqual"])(value, this.$refs.input.files)) {
-                            // When the input value is changed programatically, clear the
-                            // internal input's value so that the `onInput` handler
-                            // can be triggered again if the user re-selects the exact
-                            // same file(s). Ideally, `input.files` should be
-                            // manipulated directly but that property is readonly.
-                            this.$refs.input.value = '';
-                        }
-                    }
-                },
-                methods: {
-                    clearableCallback: function clearableCallback() {
-                        this.internalValue = this.isMultiple ? [] : null;
-                        this.$refs.input.value = '';
-                    },
-                    genChips: function genChips() {
-                        var _this = this;
-
-                        if (!this.isDirty) return [];
-                        return this.text.map(function (text, index) {
-                            return _this.$createElement(_VChip__WEBPACK_IMPORTED_MODULE_2__["VChip"], {
-                                props: {
-                                    small: _this.smallChips
-                                },
-                                on: {
-                                    'click:close': function clickClose() {
-                                        var internalValue = _this.internalValue;
-                                        internalValue.splice(index, 1);
-                                        _this.internalValue = internalValue; // Trigger the watcher
-                                    }
-                                }
-                            }, [text]);
-                        });
-                    },
-                    genControl: function genControl() {
-                        var render = _VTextField__WEBPACK_IMPORTED_MODULE_1__["default"].options.methods.genControl.call(this);
-
-                        if (this.hideInput) {
-                            render.data.style = Object(_util_mergeData__WEBPACK_IMPORTED_MODULE_5__["mergeStyles"])(render.data.style, {
-                                display: 'none'
-                            });
-                        }
-
-                        return render;
-                    },
-                    genInput: function genInput() {
-                        var input = _VTextField__WEBPACK_IMPORTED_MODULE_1__["default"].options.methods.genInput.call(this); // We should not be setting value
-                        // programmatically on the input
-                        // when it is using type="file"
-
-                        delete input.data.domProps.value; // This solves an issue in Safari where
-                        // nothing happens when adding a file
-                        // do to the input event not firing
-                        // https://github.com/vuetifyjs/vuetify/issues/7941
-
-                        delete input.data.on.input;
-                        input.data.on.change = this.onInput;
-                        return [this.genSelections(), input];
-                    },
-                    genPrependSlot: function genPrependSlot() {
-                        var _this = this;
-
-                        if (!this.prependIcon) return null;
-                        var icon = this.genIcon('prepend', function () {
-                            _this.$refs.input.click();
-                        });
-                        return this.genSlot('prepend', 'outer', [icon]);
-                    },
-                    genSelectionText: function genSelectionText() {
-                        var length = this.text.length;
-                        if (length < 2) return this.text;
-                        if (this.showSize && !this.counter) return [this.computedCounterValue];
-                        return [this.$vuetify.lang.t(this.counterString, length)];
-                    },
-                    genSelections: function genSelections() {
-                        var _this = this;
-
-                        var children = [];
-
-                        if (this.isDirty && this.$scopedSlots.selection) {
-                            this.internalArrayValue.forEach(function (file, index) {
-                                if (!_this.$scopedSlots.selection) return;
-                                children.push(_this.$scopedSlots.selection({
-                                    text: _this.text[index],
-                                    file: file,
-                                    index: index
-                                }));
-                            });
-                        } else {
-                            children.push(this.hasChips && this.isDirty ? this.genChips() : this.genSelectionText());
-                        }
-
-                        return this.$createElement('div', {
-                            staticClass: 'v-file-input__text',
-                            class: {
-                                'v-file-input__text--placeholder': this.placeholder && !this.isDirty,
-                                'v-file-input__text--chips': this.hasChips && !this.$scopedSlots.selection
-                            }
-                        }, children);
-                    },
-                    genTextFieldSlot: function genTextFieldSlot() {
-                        var _this = this;
-
-                        var node = _VTextField__WEBPACK_IMPORTED_MODULE_1__["default"].options.methods.genTextFieldSlot.call(this);
-                        node.data.on = __assign(__assign({}, node.data.on || {}), {
-                            click: function click() {
-                                return _this.$refs.input.click();
-                            }
-                        });
-                        return node;
-                    },
-                    onInput: function onInput(e) {
-                        var files = __spread(e.target.files || []);
-
-                        this.internalValue = this.isMultiple ? files : files[0]; // Set initialValue here otherwise isFocused
-                        // watcher in VTextField will emit a change
-                        // event whenever the component is blurred
-
-                        this.initialValue = this.internalValue;
-                    },
-                    onKeyDown: function onKeyDown(e) {
-                        this.$emit('keydown', e);
-                    },
-                    truncateText: function truncateText(str) {
-                        if (str.length < Number(this.truncateLength)) return str;
-                        var charsKeepOneSide = Math.floor((Number(this.truncateLength) - 1) / 2);
-                        return str.slice(0, charsKeepOneSide) + "\u2026" + str.slice(str.length - charsKeepOneSide);
-                    }
-                }
-            }));
-
-            /***/ }),
-
-        /***/ "./src/components/VFileInput/index.ts":
-        /*!********************************************!*\
-  !*** ./src/components/VFileInput/index.ts ***!
-  \********************************************/
-        /*! exports provided: VFileInput, default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony import */ var _VFileInput__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VFileInput */ "./src/components/VFileInput/VFileInput.ts");
-            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VFileInput", function() { return _VFileInput__WEBPACK_IMPORTED_MODULE_0__["default"]; });
-
-
-
-            /* harmony default export */ __webpack_exports__["default"] = (_VFileInput__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
             /***/ }),
 
@@ -4824,6 +5231,104 @@
                     VFlex: _VFlex__WEBPACK_IMPORTED_MODULE_5__["default"]
                 }
             });
+
+            /***/ }),
+
+        /***/ "./src/components/VHover/VHover.ts":
+        /*!*****************************************!*\
+  !*** ./src/components/VHover/VHover.ts ***!
+  \*****************************************/
+        /*! exports provided: default */
+        /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var _mixins_delayable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../mixins/delayable */ "./src/mixins/delayable/index.ts");
+            /* harmony import */ var _mixins_toggleable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/toggleable */ "./src/mixins/toggleable/index.ts");
+            /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
+            /* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../util/console */ "./src/util/console.ts");
+// Mixins
+
+            // Utilities
+
+
+
+            /* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_2__["default"])(_mixins_delayable__WEBPACK_IMPORTED_MODULE_0__["default"], _mixins_toggleable__WEBPACK_IMPORTED_MODULE_1__["default"]
+                /* @vue/component */
+            ).extend({
+                name: 'v-hover',
+                props: {
+                    disabled: {
+                        type: Boolean,
+                        default: false
+                    },
+                    value: {
+                        type: Boolean,
+                        default: undefined
+                    }
+                },
+                methods: {
+                    onMouseEnter: function onMouseEnter() {
+                        this.runDelay('open');
+                    },
+                    onMouseLeave: function onMouseLeave() {
+                        this.runDelay('close');
+                    }
+                },
+                render: function render() {
+                    if (!this.$scopedSlots.default && this.value === undefined) {
+                        Object(_util_console__WEBPACK_IMPORTED_MODULE_3__["consoleWarn"])('v-hover is missing a default scopedSlot or bound value', this);
+                        return null;
+                    }
+
+                    var element;
+                    /* istanbul ignore else */
+
+                    if (this.$scopedSlots.default) {
+                        element = this.$scopedSlots.default({
+                            hover: this.isActive
+                        });
+                    }
+
+                    if (Array.isArray(element) && element.length === 1) {
+                        element = element[0];
+                    }
+
+                    if (!element || Array.isArray(element) || !element.tag) {
+                        Object(_util_console__WEBPACK_IMPORTED_MODULE_3__["consoleWarn"])('v-hover should only contain a single element', this);
+                        return element;
+                    }
+
+                    if (!this.disabled) {
+                        element.data = element.data || {};
+
+                        this._g(element.data, {
+                            mouseenter: this.onMouseEnter,
+                            mouseleave: this.onMouseLeave
+                        });
+                    }
+
+                    return element;
+                }
+            }));
+
+            /***/ }),
+
+        /***/ "./src/components/VHover/index.ts":
+        /*!****************************************!*\
+  !*** ./src/components/VHover/index.ts ***!
+  \****************************************/
+        /*! exports provided: VHover, default */
+        /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var _VHover__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VHover */ "./src/components/VHover/VHover.ts");
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VHover", function() { return _VHover__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+            /* harmony default export */ __webpack_exports__["default"] = (_VHover__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
             /***/ }),
 
@@ -8392,6 +8897,7 @@
             /***/ }),
 
 
+
         /***/ "./src/components/VOverlay/VOverlay.sass":
         /*!***********************************************!*\
   !*** ./src/components/VOverlay/VOverlay.sass ***!
@@ -8528,6 +9034,152 @@
 
 
             /* harmony default export */ __webpack_exports__["default"] = (_VOverlay__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+            /***/ }),
+
+        /***/ "./src/components/VPicker/VPicker.sass":
+        /*!*********************************************!*\
+  !*** ./src/components/VPicker/VPicker.sass ***!
+  \*********************************************/
+        /*! no static exports found */
+        /***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+            /***/ }),
+
+        /***/ "./src/components/VPicker/VPicker.ts":
+        /*!*******************************************!*\
+  !*** ./src/components/VPicker/VPicker.ts ***!
+  \*******************************************/
+        /*! exports provided: default */
+        /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var _VPicker_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VPicker.sass */ "./src/components/VPicker/VPicker.sass");
+            /* harmony import */ var _VPicker_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_VPicker_sass__WEBPACK_IMPORTED_MODULE_0__);
+            /* harmony import */ var _VCard_VCard_sass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../VCard/VCard.sass */ "./src/components/VCard/VCard.sass");
+            /* harmony import */ var _VCard_VCard_sass__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_VCard_VCard_sass__WEBPACK_IMPORTED_MODULE_1__);
+            /* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable/index.ts");
+            /* harmony import */ var _mixins_elevatable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/elevatable */ "./src/mixins/elevatable/index.ts");
+            /* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable/index.ts");
+            /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
+            /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
+            var __assign = undefined && undefined.__assign || function () {
+                __assign = Object.assign || function (t) {
+                    for (var s, i = 1, n = arguments.length; i < n; i++) {
+                        s = arguments[i];
+
+                        for (var p in s) {
+                            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+                        }
+                    }
+
+                    return t;
+                };
+
+                return __assign.apply(this, arguments);
+            };
+
+
+            // Mixins
+
+
+
+            // Helpers
+
+
+
+            /* @vue/component */
+
+            /* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_6__["default"])(_mixins_colorable__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_elevatable__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_themeable__WEBPACK_IMPORTED_MODULE_4__["default"]).extend({
+                name: 'v-picker',
+                props: {
+                    flat: Boolean,
+                    fullWidth: Boolean,
+                    landscape: Boolean,
+                    noTitle: Boolean,
+                    transition: {
+                        type: String,
+                        default: 'fade-transition'
+                    },
+                    width: {
+                        type: [Number, String],
+                        default: 290
+                    }
+                },
+                computed: {
+                    computedTitleColor: function computedTitleColor() {
+                        var defaultTitleColor = this.isDark ? false : this.color || 'primary';
+                        return this.color || defaultTitleColor;
+                    }
+                },
+                methods: {
+                    genTitle: function genTitle() {
+                        return this.$createElement('div', this.setBackgroundColor(this.computedTitleColor, {
+                            staticClass: 'v-picker__title',
+                            class: {
+                                'v-picker__title--landscape': this.landscape
+                            }
+                        }), this.$slots.title);
+                    },
+                    genBodyTransition: function genBodyTransition() {
+                        return this.$createElement('transition', {
+                            props: {
+                                name: this.transition
+                            }
+                        }, this.$slots.default);
+                    },
+                    genBody: function genBody() {
+                        return this.$createElement('div', {
+                            staticClass: 'v-picker__body',
+                            class: __assign({
+                                'v-picker__body--no-title': this.noTitle
+                            }, this.themeClasses),
+                            style: this.fullWidth ? undefined : {
+                                width: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_5__["convertToUnit"])(this.width)
+                            }
+                        }, [this.genBodyTransition()]);
+                    },
+                    genActions: function genActions() {
+                        return this.$createElement('div', {
+                            staticClass: 'v-picker__actions v-card__actions',
+                            class: {
+                                'v-picker__actions--no-title': this.noTitle
+                            }
+                        }, this.$slots.actions);
+                    }
+                },
+                render: function render(h) {
+                    return h('div', {
+                        staticClass: 'v-picker v-card',
+                        class: __assign(__assign({
+                            'v-picker--flat': this.flat,
+                            'v-picker--landscape': this.landscape,
+                            'v-picker--full-width': this.fullWidth
+                        }, this.themeClasses), this.elevationClasses)
+                    }, [this.$slots.title ? this.genTitle() : null, this.genBody(), this.$slots.actions ? this.genActions() : null]);
+                }
+            }));
+
+            /***/ }),
+
+        /***/ "./src/components/VPicker/index.ts":
+        /*!*****************************************!*\
+  !*** ./src/components/VPicker/index.ts ***!
+  \*****************************************/
+        /*! exports provided: VPicker, default */
+        /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var _VPicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VPicker */ "./src/components/VPicker/VPicker.ts");
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VPicker", function() { return _VPicker__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+            /* harmony default export */ __webpack_exports__["default"] = (_VPicker__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
             /***/ }),
 
@@ -10250,6 +10902,7 @@
 
             "use strict";
             __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var _VCheckbox_VSimpleCheckbox__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../VCheckbox/VSimpleCheckbox */ "./src/components/VCheckbox/VSimpleCheckbox.ts");
             /* harmony import */ var _VDivider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../VDivider */ "./src/components/VDivider/index.ts");
             /* harmony import */ var _VSubheader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../VSubheader */ "./src/components/VSubheader/index.ts");
             /* harmony import */ var _VList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../VList */ "./src/components/VList/index.ts");
@@ -12933,487 +13586,6 @@
 
             /***/ }),
 
-        /***/ "./src/components/VStepper/VStepper.sass":
-        /*!***********************************************!*\
-  !*** ./src/components/VStepper/VStepper.sass ***!
-  \***********************************************/
-        /*! no static exports found */
-        /***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-            /***/ }),
-
-        /***/ "./src/components/VStepper/VStepper.ts":
-        /*!*********************************************!*\
-  !*** ./src/components/VStepper/VStepper.ts ***!
-  \*********************************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony import */ var _VStepper_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VStepper.sass */ "./src/components/VStepper/VStepper.sass");
-            /* harmony import */ var _VStepper_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_VStepper_sass__WEBPACK_IMPORTED_MODULE_0__);
-            /* harmony import */ var _mixins_registrable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/registrable */ "./src/mixins/registrable/index.ts");
-            /* harmony import */ var _mixins_proxyable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/proxyable */ "./src/mixins/proxyable/index.ts");
-            /* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable/index.ts");
-            /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
-            /* harmony import */ var _util_console__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../util/console */ "./src/util/console.ts");
-            var __assign = undefined && undefined.__assign || function () {
-                __assign = Object.assign || function (t) {
-                    for (var s, i = 1, n = arguments.length; i < n; i++) {
-                        s = arguments[i];
-
-                        for (var p in s) {
-                            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
-                        }
-                    }
-
-                    return t;
-                };
-
-                return __assign.apply(this, arguments);
-            }; // Styles
-
-
-            // Mixins
-
-
-
-            // Utilities
-
-
-
-            var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_4__["default"])(Object(_mixins_registrable__WEBPACK_IMPORTED_MODULE_1__["provide"])('stepper'), _mixins_proxyable__WEBPACK_IMPORTED_MODULE_2__["default"], _mixins_themeable__WEBPACK_IMPORTED_MODULE_3__["default"]);
-            /* @vue/component */
-
-            /* harmony default export */ __webpack_exports__["default"] = (baseMixins.extend({
-                name: 'v-stepper',
-                provide: function provide() {
-                    return {
-                        stepClick: this.stepClick,
-                        isVertical: this.vertical
-                    };
-                },
-                props: {
-                    altLabels: Boolean,
-                    nonLinear: Boolean,
-                    vertical: Boolean
-                },
-                data: function data() {
-                    var data = {
-                        isBooted: false,
-                        steps: [],
-                        content: [],
-                        isReverse: false
-                    };
-                    data.internalLazyValue = this.value != null ? this.value : (data[0] || {}).step || 1;
-                    return data;
-                },
-                computed: {
-                    classes: function classes() {
-                        return __assign({
-                            'v-stepper--is-booted': this.isBooted,
-                            'v-stepper--vertical': this.vertical,
-                            'v-stepper--alt-labels': this.altLabels,
-                            'v-stepper--non-linear': this.nonLinear
-                        }, this.themeClasses);
-                    }
-                },
-                watch: {
-                    internalValue: function internalValue(val, oldVal) {
-                        this.isReverse = Number(val) < Number(oldVal);
-                        oldVal && (this.isBooted = true);
-                        this.updateView();
-                    }
-                },
-                created: function created() {
-                    /* istanbul ignore next */
-                    if (this.$listeners.input) {
-                        Object(_util_console__WEBPACK_IMPORTED_MODULE_5__["breaking"])('@input', '@change', this);
-                    }
-                },
-                mounted: function mounted() {
-                    this.updateView();
-                },
-                methods: {
-                    register: function register(item) {
-                        if (item.$options.name === 'v-stepper-step') {
-                            this.steps.push(item);
-                        } else if (item.$options.name === 'v-stepper-content') {
-                            item.isVertical = this.vertical;
-                            this.content.push(item);
-                        }
-                    },
-                    unregister: function unregister(item) {
-                        if (item.$options.name === 'v-stepper-step') {
-                            this.steps = this.steps.filter(function (i) {
-                                return i !== item;
-                            });
-                        } else if (item.$options.name === 'v-stepper-content') {
-                            item.isVertical = this.vertical;
-                            this.content = this.content.filter(function (i) {
-                                return i !== item;
-                            });
-                        }
-                    },
-                    stepClick: function stepClick(step) {
-                        var _this = this;
-
-                        this.$nextTick(function () {
-                            return _this.internalValue = step;
-                        });
-                    },
-                    updateView: function updateView() {
-                        for (var index = this.steps.length; --index >= 0;) {
-                            this.steps[index].toggle(this.internalValue);
-                        }
-
-                        for (var index = this.content.length; --index >= 0;) {
-                            this.content[index].toggle(this.internalValue, this.isReverse);
-                        }
-                    }
-                },
-                render: function render(h) {
-                    return h('div', {
-                        staticClass: 'v-stepper',
-                        class: this.classes
-                    }, this.$slots.default);
-                }
-            }));
-
-            /***/ }),
-
-        /***/ "./src/components/VStepper/VStepperContent.ts":
-        /*!****************************************************!*\
-  !*** ./src/components/VStepper/VStepperContent.ts ***!
-  \****************************************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony import */ var _transitions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../transitions */ "./src/components/transitions/index.ts");
-            /* harmony import */ var _mixins_registrable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/registrable */ "./src/mixins/registrable/index.ts");
-            /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
-            /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
-// Components
-            // Mixins
-
-            // Helpers
-
-            // Utilities
-
-
-            var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_3__["default"])(Object(_mixins_registrable__WEBPACK_IMPORTED_MODULE_1__["inject"])('stepper', 'v-stepper-content', 'v-stepper'));
-            /* @vue/component */
-
-            /* harmony default export */ __webpack_exports__["default"] = (baseMixins.extend().extend({
-                name: 'v-stepper-content',
-                inject: {
-                    isVerticalProvided: {
-                        from: 'isVertical'
-                    }
-                },
-                props: {
-                    step: {
-                        type: [Number, String],
-                        required: true
-                    }
-                },
-                data: function data() {
-                    return {
-                        height: 0,
-                        // Must be null to allow
-                        // previous comparison
-                        isActive: null,
-                        isReverse: false,
-                        isVertical: this.isVerticalProvided
-                    };
-                },
-                computed: {
-                    computedTransition: function computedTransition() {
-                        // Fix for #8978
-                        var reverse = this.$vuetify.rtl ? !this.isReverse : this.isReverse;
-                        return reverse ? _transitions__WEBPACK_IMPORTED_MODULE_0__["VTabReverseTransition"] : _transitions__WEBPACK_IMPORTED_MODULE_0__["VTabTransition"];
-                    },
-                    styles: function styles() {
-                        if (!this.isVertical) return {};
-                        return {
-                            height: Object(_util_helpers__WEBPACK_IMPORTED_MODULE_2__["convertToUnit"])(this.height)
-                        };
-                    }
-                },
-                watch: {
-                    isActive: function isActive(current, previous) {
-                        // If active and the previous state
-                        // was null, is just booting up
-                        if (current && previous == null) {
-                            this.height = 'auto';
-                            return;
-                        }
-
-                        if (!this.isVertical) return;
-                        if (this.isActive) this.enter();else this.leave();
-                    }
-                },
-                mounted: function mounted() {
-                    this.$refs.wrapper.addEventListener('transitionend', this.onTransition, false);
-                    this.stepper && this.stepper.register(this);
-                },
-                beforeDestroy: function beforeDestroy() {
-                    this.$refs.wrapper.removeEventListener('transitionend', this.onTransition, false);
-                    this.stepper && this.stepper.unregister(this);
-                },
-                methods: {
-                    onTransition: function onTransition(e) {
-                        if (!this.isActive || e.propertyName !== 'height') return;
-                        this.height = 'auto';
-                    },
-                    enter: function enter() {
-                        var _this = this;
-
-                        var scrollHeight = 0; // Render bug with height
-
-                        requestAnimationFrame(function () {
-                            scrollHeight = _this.$refs.wrapper.scrollHeight;
-                        });
-                        this.height = 0; // Give the collapsing element time to collapse
-
-                        setTimeout(function () {
-                            return _this.isActive && (_this.height = scrollHeight || 'auto');
-                        }, 450);
-                    },
-                    leave: function leave() {
-                        var _this = this;
-
-                        this.height = this.$refs.wrapper.clientHeight;
-                        setTimeout(function () {
-                            return _this.height = 0;
-                        }, 10);
-                    },
-                    toggle: function toggle(step, reverse) {
-                        this.isActive = step.toString() === this.step.toString();
-                        this.isReverse = reverse;
-                    }
-                },
-                render: function render(h) {
-                    var contentData = {
-                        staticClass: 'v-stepper__content'
-                    };
-                    var wrapperData = {
-                        staticClass: 'v-stepper__wrapper',
-                        style: this.styles,
-                        ref: 'wrapper'
-                    };
-
-                    if (!this.isVertical) {
-                        contentData.directives = [{
-                            name: 'show',
-                            value: this.isActive
-                        }];
-                    }
-
-                    var wrapper = h('div', wrapperData, [this.$slots.default]);
-                    var content = h('div', contentData, [wrapper]);
-                    return h(this.computedTransition, {
-                        on: this.$listeners
-                    }, [content]);
-                }
-            }));
-
-            /***/ }),
-
-        /***/ "./src/components/VStepper/VStepperStep.ts":
-        /*!*************************************************!*\
-  !*** ./src/components/VStepper/VStepperStep.ts ***!
-  \*************************************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony import */ var _VIcon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../VIcon */ "./src/components/VIcon/index.ts");
-            /* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable/index.ts");
-            /* harmony import */ var _mixins_registrable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/registrable */ "./src/mixins/registrable/index.ts");
-            /* harmony import */ var _directives_ripple__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../directives/ripple */ "./src/directives/ripple/index.ts");
-            /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
-// Components
-            // Mixins
-
-
-            // Directives
-
-            // Utilities
-
-
-            var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_4__["default"])(_mixins_colorable__WEBPACK_IMPORTED_MODULE_1__["default"], Object(_mixins_registrable__WEBPACK_IMPORTED_MODULE_2__["inject"])('stepper', 'v-stepper-step', 'v-stepper'));
-            /* @vue/component */
-
-            /* harmony default export */ __webpack_exports__["default"] = (baseMixins.extend().extend({
-                name: 'v-stepper-step',
-                directives: {
-                    ripple: _directives_ripple__WEBPACK_IMPORTED_MODULE_3__["default"]
-                },
-                inject: ['stepClick'],
-                props: {
-                    color: {
-                        type: String,
-                        default: 'primary'
-                    },
-                    complete: Boolean,
-                    completeIcon: {
-                        type: String,
-                        default: '$complete'
-                    },
-                    editable: Boolean,
-                    editIcon: {
-                        type: String,
-                        default: '$edit'
-                    },
-                    errorIcon: {
-                        type: String,
-                        default: '$error'
-                    },
-                    rules: {
-                        type: Array,
-                        default: function _default() {
-                            return [];
-                        }
-                    },
-                    step: [Number, String]
-                },
-                data: function data() {
-                    return {
-                        isActive: false,
-                        isInactive: true
-                    };
-                },
-                computed: {
-                    classes: function classes() {
-                        return {
-                            'v-stepper__step--active': this.isActive,
-                            'v-stepper__step--editable': this.editable,
-                            'v-stepper__step--inactive': this.isInactive,
-                            'v-stepper__step--error error--text': this.hasError,
-                            'v-stepper__step--complete': this.complete
-                        };
-                    },
-                    hasError: function hasError() {
-                        return this.rules.some(function (validate) {
-                            return validate() !== true;
-                        });
-                    }
-                },
-                mounted: function mounted() {
-                    this.stepper && this.stepper.register(this);
-                },
-                beforeDestroy: function beforeDestroy() {
-                    this.stepper && this.stepper.unregister(this);
-                },
-                methods: {
-                    click: function click(e) {
-                        e.stopPropagation();
-                        this.$emit('click', e);
-
-                        if (this.editable) {
-                            this.stepClick(this.step);
-                        }
-                    },
-                    genIcon: function genIcon(icon) {
-                        return this.$createElement(_VIcon__WEBPACK_IMPORTED_MODULE_0__["default"], icon);
-                    },
-                    genLabel: function genLabel() {
-                        return this.$createElement('div', {
-                            staticClass: 'v-stepper__label'
-                        }, this.$slots.default);
-                    },
-                    genStep: function genStep() {
-                        var color = !this.hasError && (this.complete || this.isActive) ? this.color : false;
-                        return this.$createElement('span', this.setBackgroundColor(color, {
-                            staticClass: 'v-stepper__step__step'
-                        }), this.genStepContent());
-                    },
-                    genStepContent: function genStepContent() {
-                        var children = [];
-
-                        if (this.hasError) {
-                            children.push(this.genIcon(this.errorIcon));
-                        } else if (this.complete) {
-                            if (this.editable) {
-                                children.push(this.genIcon(this.editIcon));
-                            } else {
-                                children.push(this.genIcon(this.completeIcon));
-                            }
-                        } else {
-                            children.push(String(this.step));
-                        }
-
-                        return children;
-                    },
-                    toggle: function toggle(step) {
-                        this.isActive = step.toString() === this.step.toString();
-                        this.isInactive = Number(step) < Number(this.step);
-                    }
-                },
-                render: function render(h) {
-                    return h('div', {
-                        staticClass: 'v-stepper__step',
-                        class: this.classes,
-                        directives: [{
-                            name: 'ripple',
-                            value: this.editable
-                        }],
-                        on: {
-                            click: this.click
-                        }
-                    }, [this.genStep(), this.genLabel()]);
-                }
-            }));
-
-            /***/ }),
-
-        /***/ "./src/components/VStepper/index.ts":
-        /*!******************************************!*\
-  !*** ./src/components/VStepper/index.ts ***!
-  \******************************************/
-        /*! exports provided: VStepper, VStepperContent, VStepperStep, VStepperHeader, VStepperItems, default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VStepperHeader", function() { return VStepperHeader; });
-            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VStepperItems", function() { return VStepperItems; });
-            /* harmony import */ var _util_helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../util/helpers */ "./src/util/helpers.ts");
-            /* harmony import */ var _VStepper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VStepper */ "./src/components/VStepper/VStepper.ts");
-            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VStepper", function() { return _VStepper__WEBPACK_IMPORTED_MODULE_1__["default"]; });
-
-            /* harmony import */ var _VStepperStep__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./VStepperStep */ "./src/components/VStepper/VStepperStep.ts");
-            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VStepperStep", function() { return _VStepperStep__WEBPACK_IMPORTED_MODULE_2__["default"]; });
-
-            /* harmony import */ var _VStepperContent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./VStepperContent */ "./src/components/VStepper/VStepperContent.ts");
-            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VStepperContent", function() { return _VStepperContent__WEBPACK_IMPORTED_MODULE_3__["default"]; });
-
-
-
-
-
-            var VStepperHeader = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_0__["createSimpleFunctional"])('v-stepper__header');
-            var VStepperItems = Object(_util_helpers__WEBPACK_IMPORTED_MODULE_0__["createSimpleFunctional"])('v-stepper__items');
-
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                $_vuetify_subcomponents: {
-                    VStepper: _VStepper__WEBPACK_IMPORTED_MODULE_1__["default"],
-                    VStepperContent: _VStepperContent__WEBPACK_IMPORTED_MODULE_3__["default"],
-                    VStepperStep: _VStepperStep__WEBPACK_IMPORTED_MODULE_2__["default"],
-                    VStepperHeader: VStepperHeader,
-                    VStepperItems: VStepperItems
-                }
-            });
-
-            /***/ }),
-
         /***/ "./src/components/VSubheader/VSubheader.sass":
         /*!***************************************************!*\
   !*** ./src/components/VSubheader/VSubheader.sass ***!
@@ -14559,6 +14731,7 @@
             /* harmony import */ var _VTextField_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VTextField.sass */ "./src/components/VTextField/VTextField.sass");
             /* harmony import */ var _VTextField_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_VTextField_sass__WEBPACK_IMPORTED_MODULE_0__);
             /* harmony import */ var _VInput__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../VInput */ "./src/components/VInput/index.ts");
+            /* harmony import */ var _VCounter__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../VCounter */ "./src/components/VCounter/index.ts");
             /* harmony import */ var _VLabel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../VLabel */ "./src/components/VLabel/index.ts");
             /* harmony import */ var _mixins_intersectable__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../mixins/intersectable */ "./src/mixins/intersectable/index.ts");
             /* harmony import */ var _mixins_loadable__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../mixins/loadable */ "./src/mixins/loadable/index.ts");
@@ -15315,6 +15488,233 @@
             /***/ }),
 
 
+        /***/ "./src/components/VTimeline/VTimeline.sass":
+        /*!*************************************************!*\
+  !*** ./src/components/VTimeline/VTimeline.sass ***!
+  \*************************************************/
+        /*! no static exports found */
+        /***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+            /***/ }),
+
+        /***/ "./src/components/VTimeline/VTimeline.ts":
+        /*!***********************************************!*\
+  !*** ./src/components/VTimeline/VTimeline.ts ***!
+  \***********************************************/
+        /*! exports provided: default */
+        /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var _VTimeline_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VTimeline.sass */ "./src/components/VTimeline/VTimeline.sass");
+            /* harmony import */ var _VTimeline_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_VTimeline_sass__WEBPACK_IMPORTED_MODULE_0__);
+            /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
+            /* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable/index.ts");
+            var __assign = undefined && undefined.__assign || function () {
+                __assign = Object.assign || function (t) {
+                    for (var s, i = 1, n = arguments.length; i < n; i++) {
+                        s = arguments[i];
+
+                        for (var p in s) {
+                            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+                        }
+                    }
+
+                    return t;
+                };
+
+                return __assign.apply(this, arguments);
+            }; // Styles
+
+
+
+            // Mixins
+
+
+            /* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_1__["default"])(_mixins_themeable__WEBPACK_IMPORTED_MODULE_2__["default"]
+                /* @vue/component */
+            ).extend({
+                name: 'v-timeline',
+                provide: function provide() {
+                    return {
+                        timeline: this
+                    };
+                },
+                props: {
+                    alignTop: Boolean,
+                    dense: Boolean,
+                    reverse: Boolean
+                },
+                computed: {
+                    classes: function classes() {
+                        return __assign({
+                            'v-timeline--align-top': this.alignTop,
+                            'v-timeline--dense': this.dense,
+                            'v-timeline--reverse': this.reverse
+                        }, this.themeClasses);
+                    }
+                },
+                render: function render(h) {
+                    return h('div', {
+                        staticClass: 'v-timeline',
+                        class: this.classes
+                    }, this.$slots.default);
+                }
+            }));
+
+            /***/ }),
+
+        /***/ "./src/components/VTimeline/VTimelineItem.ts":
+        /*!***************************************************!*\
+  !*** ./src/components/VTimeline/VTimelineItem.ts ***!
+  \***************************************************/
+        /*! exports provided: default */
+        /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
+            /* harmony import */ var _VIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../VIcon */ "./src/components/VIcon/index.ts");
+            /* harmony import */ var _mixins_themeable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/themeable */ "./src/mixins/themeable/index.ts");
+            /* harmony import */ var _mixins_colorable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../mixins/colorable */ "./src/mixins/colorable/index.ts");
+            var __assign = undefined && undefined.__assign || function () {
+                __assign = Object.assign || function (t) {
+                    for (var s, i = 1, n = arguments.length; i < n; i++) {
+                        s = arguments[i];
+
+                        for (var p in s) {
+                            if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+                        }
+                    }
+
+                    return t;
+                };
+
+                return __assign.apply(this, arguments);
+            }; // Types
+
+
+
+            // Mixins
+
+
+
+            var baseMixins = Object(_util_mixins__WEBPACK_IMPORTED_MODULE_0__["default"])(_mixins_colorable__WEBPACK_IMPORTED_MODULE_3__["default"], _mixins_themeable__WEBPACK_IMPORTED_MODULE_2__["default"]
+                /* @vue/component */
+            );
+            /* harmony default export */ __webpack_exports__["default"] = (baseMixins.extend().extend({
+                name: 'v-timeline-item',
+                inject: ['timeline'],
+                props: {
+                    color: {
+                        type: String,
+                        default: 'primary'
+                    },
+                    fillDot: Boolean,
+                    hideDot: Boolean,
+                    icon: String,
+                    iconColor: String,
+                    large: Boolean,
+                    left: Boolean,
+                    right: Boolean,
+                    small: Boolean
+                },
+                computed: {
+                    hasIcon: function hasIcon() {
+                        return !!this.icon || !!this.$slots.icon;
+                    }
+                },
+                methods: {
+                    genBody: function genBody() {
+                        return this.$createElement('div', {
+                            staticClass: 'v-timeline-item__body'
+                        }, this.$slots.default);
+                    },
+                    genIcon: function genIcon() {
+                        if (this.$slots.icon) {
+                            return this.$slots.icon;
+                        }
+
+                        return this.$createElement(_VIcon__WEBPACK_IMPORTED_MODULE_1__["default"], {
+                            props: {
+                                color: this.iconColor,
+                                dark: !this.theme.isDark,
+                                small: this.small
+                            }
+                        }, this.icon);
+                    },
+                    genInnerDot: function genInnerDot() {
+                        var data = this.setBackgroundColor(this.color);
+                        return this.$createElement('div', __assign({
+                            staticClass: 'v-timeline-item__inner-dot'
+                        }, data), [this.hasIcon && this.genIcon()]);
+                    },
+                    genDot: function genDot() {
+                        return this.$createElement('div', {
+                            staticClass: 'v-timeline-item__dot',
+                            class: {
+                                'v-timeline-item__dot--small': this.small,
+                                'v-timeline-item__dot--large': this.large
+                            }
+                        }, [this.genInnerDot()]);
+                    },
+                    genDivider: function genDivider() {
+                        var children = [];
+                        if (!this.hideDot) children.push(this.genDot());
+                        return this.$createElement('div', {
+                            staticClass: 'v-timeline-item__divider'
+                        }, children);
+                    },
+                    genOpposite: function genOpposite() {
+                        return this.$createElement('div', {
+                            staticClass: 'v-timeline-item__opposite'
+                        }, this.$slots.opposite);
+                    }
+                },
+                render: function render(h) {
+                    var children = [this.genBody(), this.genDivider()];
+                    if (this.$slots.opposite) children.push(this.genOpposite());
+                    return h('div', {
+                        staticClass: 'v-timeline-item',
+                        class: __assign({
+                            'v-timeline-item--fill-dot': this.fillDot,
+                            'v-timeline-item--before': this.timeline.reverse ? this.right : this.left,
+                            'v-timeline-item--after': this.timeline.reverse ? this.left : this.right
+                        }, this.themeClasses)
+                    }, children);
+                }
+            }));
+
+            /***/ }),
+
+        /***/ "./src/components/VTimeline/index.ts":
+        /*!*******************************************!*\
+  !*** ./src/components/VTimeline/index.ts ***!
+  \*******************************************/
+        /*! exports provided: VTimeline, VTimelineItem, default */
+        /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var _VTimeline__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./VTimeline */ "./src/components/VTimeline/VTimeline.ts");
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VTimeline", function() { return _VTimeline__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+            /* harmony import */ var _VTimelineItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./VTimelineItem */ "./src/components/VTimeline/VTimelineItem.ts");
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VTimelineItem", function() { return _VTimelineItem__WEBPACK_IMPORTED_MODULE_1__["default"]; });
+
+
+
+
+            /* harmony default export */ __webpack_exports__["default"] = ({
+                $_vuetify_subcomponents: {
+                    VTimeline: _VTimeline__WEBPACK_IMPORTED_MODULE_0__["default"],
+                    VTimelineItem: _VTimelineItem__WEBPACK_IMPORTED_MODULE_1__["default"]
+                }
+            });
+
+            /***/ }),
 
         /***/ "./src/components/VToolbar/VToolbar.sass":
         /*!***********************************************!*\
@@ -17552,7 +17952,6 @@
         /*!*********************************!*\
   !*** ./src/components/index.ts ***!
   \*********************************/
-        /*! exports provided: VApp, VAppBar, VAppBarNavIcon, VAppBarTitle, VAlert, VAutocomplete, VAvatar, VBadge, VBanner, VBottomSheet, VBtn, VCard, VCardActions, VCardSubtitle, VCardText, VCardTitle, VCarousel, VCarouselItem, VCheckbox, VSimpleCheckbox, VChip, VChipGroup, VContent, VCombobox, VCounter, VData, VDataIterator, VDataFooter, VDataTable, VEditDialog, VTableOverflow, VDataTableHeader, VSimpleTable, VVirtualTable, VDatePickerTitle, VDatePickerHeader, VDatePickerDateTable, VDatePickerMonthTable, VDatePickerYears, VDialog, VDivider, VExpansionPanels, VExpansionPanel, VExpansionPanelHeader, VExpansionPanelContent, VFileInput, VFooter, VForm, VContainer, VCol, VRow, VSpacer, VLayout, VFlex, VIcon, VImg, VInput, VItem, VItemGroup, VLabel, VLazy, VListItemActionText, VListItemContent, VListItemTitle, VListItemSubtitle, VList, VListGroup, VListItem, VListItemAction, VListItemAvatar, VListItemIcon, VListItemGroup, VMain, VMenu, VMessages, VNavigationDrawer, VOverflowBtn, VOverlay, VPagination, VSheet, VParallax, VPicker, VProgressCircular, VProgressLinear, VRadioGroup, VRadio, VRating, VResponsive, VSelect, VSkeletonLoader, VSlider, VSlideGroup, VSlideItem, VSnackbar, VSparkline, VSpeedDial, VStepper, VStepperContent, VStepperStep, VStepperHeader, VStepperItems, VSubheader, VSwitch, VSystemBar, VTabs, VTab, VTabItem, VTabsItems, VTabsSlider, VTextarea, VTextField, VThemeProvider, VTimeline, VTimelineItem, VToolbar, VToolbarItems, VToolbarTitle, VTooltip, VTreeview, VTreeviewNode, VVirtualScroll, VWindow, VWindowItem, VCarouselTransition, VCarouselReverseTransition, VTabTransition, VTabReverseTransition, VMenuTransition, VFabTransition, VDialogTransition, VDialogBottomTransition, VDialogTopTransition, VFadeTransition, VScaleTransition, VScrollXTransition, VScrollXReverseTransition, VScrollYTransition, VScrollYReverseTransition, VSlideXTransition, VSlideXReverseTransition, VSlideYTransition, VSlideYReverseTransition, VExpandTransition, VExpandXTransition */
         /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
             "use strict";
@@ -17577,14 +17976,17 @@
             /* harmony import */ var _VBadge__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./VBadge */ "./src/components/VBadge/index.ts");
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VBadge", function() { return _VBadge__WEBPACK_IMPORTED_MODULE_5__["VBadge"]; });
 
+            /* harmony import */ var _VBanner__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./VBanner */ "./src/components/VBanner/index.ts");
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VBanner", function() { return _VBanner__WEBPACK_IMPORTED_MODULE_6__["VBanner"]; });
+
+            /* harmony import */ var _VBottomNavigation__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./VBottomNavigation */ "./src/components/VBottomNavigation/index.ts");
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VBottomNavigation", function() { return _VBottomNavigation__WEBPACK_IMPORTED_MODULE_7__["VBottomNavigation"]; });
+
             /* harmony import */ var _VBottomSheet__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./VBottomSheet */ "./src/components/VBottomSheet/index.ts");
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VBottomSheet", function() { return _VBottomSheet__WEBPACK_IMPORTED_MODULE_8__["VBottomSheet"]; });
 
-
             /* harmony import */ var _VBtn__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./VBtn */ "./src/components/VBtn/index.ts");
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VBtn", function() { return _VBtn__WEBPACK_IMPORTED_MODULE_10__["VBtn"]; });
-
-
 
             /* harmony import */ var _VCard__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./VCard */ "./src/components/VCard/index.ts");
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VCard", function() { return _VCard__WEBPACK_IMPORTED_MODULE_13__["VCard"]; });
@@ -17602,6 +18004,11 @@
 
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VCarouselItem", function() { return _VCarousel__WEBPACK_IMPORTED_MODULE_14__["VCarouselItem"]; });
 
+            /* harmony import */ var _VCheckbox__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./VCheckbox */ "./src/components/VCheckbox/index.ts");
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VCheckbox", function() { return _VCheckbox__WEBPACK_IMPORTED_MODULE_15__["VCheckbox"]; });
+
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VSimpleCheckbox", function() { return _VCheckbox__WEBPACK_IMPORTED_MODULE_15__["VSimpleCheckbox"]; });
+
             /* harmony import */ var _VChip__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./VChip */ "./src/components/VChip/index.ts");
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VChip", function() { return _VChip__WEBPACK_IMPORTED_MODULE_16__["VChip"]; });
 
@@ -17611,6 +18018,8 @@
             /* harmony import */ var _VContent__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./VContent */ "./src/components/VContent/index.ts");
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VContent", function() { return _VContent__WEBPACK_IMPORTED_MODULE_19__["VContent"]; });
 
+            /* harmony import */ var _VCounter__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./VCounter */ "./src/components/VCounter/index.ts");
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VCounter", function() { return _VCounter__WEBPACK_IMPORTED_MODULE_21__["VCounter"]; });
 
             /* harmony import */ var _VDialog__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./VDialog */ "./src/components/VDialog/index.ts");
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VDialog", function() { return _VDialog__WEBPACK_IMPORTED_MODULE_26__["VDialog"]; });
@@ -17626,9 +18035,6 @@
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VExpansionPanelHeader", function() { return _VExpansionPanel__WEBPACK_IMPORTED_MODULE_28__["VExpansionPanelHeader"]; });
 
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VExpansionPanelContent", function() { return _VExpansionPanel__WEBPACK_IMPORTED_MODULE_28__["VExpansionPanelContent"]; });
-
-            /* harmony import */ var _VFileInput__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./VFileInput */ "./src/components/VFileInput/index.ts");
-            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VFileInput", function() { return _VFileInput__WEBPACK_IMPORTED_MODULE_29__["VFileInput"]; });
 
             /* harmony import */ var _VFooter__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./VFooter */ "./src/components/VFooter/index.ts");
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VFooter", function() { return _VFooter__WEBPACK_IMPORTED_MODULE_30__["VFooter"]; });
@@ -17648,6 +18054,9 @@
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VLayout", function() { return _VGrid__WEBPACK_IMPORTED_MODULE_32__["VLayout"]; });
 
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VFlex", function() { return _VGrid__WEBPACK_IMPORTED_MODULE_32__["VFlex"]; });
+
+            /* harmony import */ var _VHover__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./VHover */ "./src/components/VHover/index.ts");
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VHover", function() { return _VHover__WEBPACK_IMPORTED_MODULE_33__["VHover"]; });
 
             /* harmony import */ var _VIcon__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./VIcon */ "./src/components/VIcon/index.ts");
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VIcon", function() { return _VIcon__WEBPACK_IMPORTED_MODULE_34__["VIcon"]; });
@@ -17704,12 +18113,14 @@
             /* harmony import */ var _VNavigationDrawer__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./VNavigationDrawer */ "./src/components/VNavigationDrawer/index.ts");
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VNavigationDrawer", function() { return _VNavigationDrawer__WEBPACK_IMPORTED_MODULE_44__["VNavigationDrawer"]; });
 
-
             /* harmony import */ var _VOverlay__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./VOverlay */ "./src/components/VOverlay/index.ts");
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VOverlay", function() { return _VOverlay__WEBPACK_IMPORTED_MODULE_46__["VOverlay"]; });
 
             /* harmony import */ var _VSheet__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! ./VSheet */ "./src/components/VSheet/index.ts");
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VSheet", function() { return _VSheet__WEBPACK_IMPORTED_MODULE_48__["VSheet"]; });
+
+            /* harmony import */ var _VPicker__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./VPicker */ "./src/components/VPicker/index.ts");
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VPicker", function() { return _VPicker__WEBPACK_IMPORTED_MODULE_50__["VPicker"]; });
 
             /* harmony import */ var _VProgressCircular__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./VProgressCircular */ "./src/components/VProgressCircular/index.ts");
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VProgressCircular", function() { return _VProgressCircular__WEBPACK_IMPORTED_MODULE_51__["VProgressCircular"]; });
@@ -17746,17 +18157,6 @@
             /* harmony import */ var _VSpeedDial__WEBPACK_IMPORTED_MODULE_63__ = __webpack_require__(/*! ./VSpeedDial */ "./src/components/VSpeedDial/index.ts");
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VSpeedDial", function() { return _VSpeedDial__WEBPACK_IMPORTED_MODULE_63__["VSpeedDial"]; });
 
-            /* harmony import */ var _VStepper__WEBPACK_IMPORTED_MODULE_64__ = __webpack_require__(/*! ./VStepper */ "./src/components/VStepper/index.ts");
-            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VStepper", function() { return _VStepper__WEBPACK_IMPORTED_MODULE_64__["VStepper"]; });
-
-            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VStepperContent", function() { return _VStepper__WEBPACK_IMPORTED_MODULE_64__["VStepperContent"]; });
-
-            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VStepperStep", function() { return _VStepper__WEBPACK_IMPORTED_MODULE_64__["VStepperStep"]; });
-
-            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VStepperHeader", function() { return _VStepper__WEBPACK_IMPORTED_MODULE_64__["VStepperHeader"]; });
-
-            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VStepperItems", function() { return _VStepper__WEBPACK_IMPORTED_MODULE_64__["VStepperItems"]; });
-
             /* harmony import */ var _VSubheader__WEBPACK_IMPORTED_MODULE_65__ = __webpack_require__(/*! ./VSubheader */ "./src/components/VSubheader/index.ts");
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VSubheader", function() { return _VSubheader__WEBPACK_IMPORTED_MODULE_65__["VSubheader"]; });
 
@@ -17786,6 +18186,11 @@
             /* harmony import */ var _VThemeProvider__WEBPACK_IMPORTED_MODULE_71__ = __webpack_require__(/*! ./VThemeProvider */ "./src/components/VThemeProvider/index.ts");
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VThemeProvider", function() { return _VThemeProvider__WEBPACK_IMPORTED_MODULE_71__["VThemeProvider"]; });
 
+            /* harmony import */ var _VTimeline__WEBPACK_IMPORTED_MODULE_72__ = __webpack_require__(/*! ./VTimeline */ "./src/components/VTimeline/index.ts");
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VTimeline", function() { return _VTimeline__WEBPACK_IMPORTED_MODULE_72__["VTimeline"]; });
+
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VTimelineItem", function() { return _VTimeline__WEBPACK_IMPORTED_MODULE_72__["VTimelineItem"]; });
+
             /* harmony import */ var _VToolbar__WEBPACK_IMPORTED_MODULE_74__ = __webpack_require__(/*! ./VToolbar */ "./src/components/VToolbar/index.ts");
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VToolbar", function() { return _VToolbar__WEBPACK_IMPORTED_MODULE_74__["VToolbar"]; });
 
@@ -17814,6 +18219,9 @@
 
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VCarouselReverseTransition", function() { return _transitions__WEBPACK_IMPORTED_MODULE_79__["VCarouselReverseTransition"]; });
 
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VTabTransition", function() { return _transitions__WEBPACK_IMPORTED_MODULE_79__["VTabTransition"]; });
+
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VTabReverseTransition", function() { return _transitions__WEBPACK_IMPORTED_MODULE_79__["VTabReverseTransition"]; });
 
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VMenuTransition", function() { return _transitions__WEBPACK_IMPORTED_MODULE_79__["VMenuTransition"]; });
 
@@ -17825,6 +18233,29 @@
 
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VDialogTopTransition", function() { return _transitions__WEBPACK_IMPORTED_MODULE_79__["VDialogTopTransition"]; });
 
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VFadeTransition", function() { return _transitions__WEBPACK_IMPORTED_MODULE_79__["VFadeTransition"]; });
+
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VScaleTransition", function() { return _transitions__WEBPACK_IMPORTED_MODULE_79__["VScaleTransition"]; });
+
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VScrollXTransition", function() { return _transitions__WEBPACK_IMPORTED_MODULE_79__["VScrollXTransition"]; });
+
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VScrollXReverseTransition", function() { return _transitions__WEBPACK_IMPORTED_MODULE_79__["VScrollXReverseTransition"]; });
+
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VScrollYTransition", function() { return _transitions__WEBPACK_IMPORTED_MODULE_79__["VScrollYTransition"]; });
+
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VScrollYReverseTransition", function() { return _transitions__WEBPACK_IMPORTED_MODULE_79__["VScrollYReverseTransition"]; });
+
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VSlideXTransition", function() { return _transitions__WEBPACK_IMPORTED_MODULE_79__["VSlideXTransition"]; });
+
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VSlideXReverseTransition", function() { return _transitions__WEBPACK_IMPORTED_MODULE_79__["VSlideXReverseTransition"]; });
+
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VSlideYTransition", function() { return _transitions__WEBPACK_IMPORTED_MODULE_79__["VSlideYTransition"]; });
+
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VSlideYReverseTransition", function() { return _transitions__WEBPACK_IMPORTED_MODULE_79__["VSlideYReverseTransition"]; });
+
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VExpandTransition", function() { return _transitions__WEBPACK_IMPORTED_MODULE_79__["VExpandTransition"]; });
+
+            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VExpandXTransition", function() { return _transitions__WEBPACK_IMPORTED_MODULE_79__["VExpandXTransition"]; });
 
 
 
@@ -18165,10 +18596,25 @@
             __webpack_require__.r(__webpack_exports__);
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VCarouselTransition", function() { return VCarouselTransition; });
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VCarouselReverseTransition", function() { return VCarouselReverseTransition; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VTabTransition", function() { return VTabTransition; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VTabReverseTransition", function() { return VTabReverseTransition; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VMenuTransition", function() { return VMenuTransition; });
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VFabTransition", function() { return VFabTransition; });
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VDialogTransition", function() { return VDialogTransition; });
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VDialogBottomTransition", function() { return VDialogBottomTransition; });
             /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VDialogTopTransition", function() { return VDialogTopTransition; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VFadeTransition", function() { return VFadeTransition; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VScaleTransition", function() { return VScaleTransition; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VScrollXTransition", function() { return VScrollXTransition; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VScrollXReverseTransition", function() { return VScrollXReverseTransition; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VScrollYTransition", function() { return VScrollYTransition; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VScrollYReverseTransition", function() { return VScrollYReverseTransition; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VSlideXTransition", function() { return VSlideXTransition; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VSlideXReverseTransition", function() { return VSlideXReverseTransition; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VSlideYTransition", function() { return VSlideYTransition; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VSlideYReverseTransition", function() { return VSlideYReverseTransition; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VExpandTransition", function() { return VExpandTransition; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VExpandXTransition", function() { return VExpandXTransition; });
             /* harmony import */ var _createTransition__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./createTransition */ "./src/components/transitions/createTransition.ts");
             /* harmony import */ var _expand_transition__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./expand-transition */ "./src/components/transitions/expand-transition.ts");
 
@@ -18176,15 +18622,50 @@
 
             var VCarouselTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createSimpleTransition"])('carousel-transition');
             var VCarouselReverseTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createSimpleTransition"])('carousel-reverse-transition');
+            var VTabTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createSimpleTransition"])('tab-transition');
+            var VTabReverseTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createSimpleTransition"])('tab-reverse-transition');
+            var VMenuTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createSimpleTransition"])('menu-transition');
             var VFabTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createSimpleTransition"])('fab-transition', 'center center', 'out-in'); // Generic transitions
+
             var VDialogTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createSimpleTransition"])('dialog-transition');
             var VDialogBottomTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createSimpleTransition"])('dialog-bottom-transition');
             var VDialogTopTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createSimpleTransition"])('dialog-top-transition');
+            var VFadeTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createSimpleTransition"])('fade-transition');
+            var VScaleTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createSimpleTransition"])('scale-transition');
+            var VScrollXTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createSimpleTransition"])('scroll-x-transition');
+            var VScrollXReverseTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createSimpleTransition"])('scroll-x-reverse-transition');
+            var VScrollYTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createSimpleTransition"])('scroll-y-transition');
+            var VScrollYReverseTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createSimpleTransition"])('scroll-y-reverse-transition');
+            var VSlideXTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createSimpleTransition"])('slide-x-transition');
+            var VSlideXReverseTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createSimpleTransition"])('slide-x-reverse-transition');
+            var VSlideYTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createSimpleTransition"])('slide-y-transition');
+            var VSlideYReverseTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createSimpleTransition"])('slide-y-reverse-transition'); // Javascript transitions
+
+            var VExpandTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createJavascriptTransition"])('expand-transition', Object(_expand_transition__WEBPACK_IMPORTED_MODULE_1__["default"])());
+            var VExpandXTransition = Object(_createTransition__WEBPACK_IMPORTED_MODULE_0__["createJavascriptTransition"])('expand-x-transition', Object(_expand_transition__WEBPACK_IMPORTED_MODULE_1__["default"])('', true));
             /* harmony default export */ __webpack_exports__["default"] = ({
                 $_vuetify_subcomponents: {
                     VCarouselTransition: VCarouselTransition,
                     VCarouselReverseTransition: VCarouselReverseTransition,
+                    VDialogTransition: VDialogTransition,
+                    VDialogBottomTransition: VDialogBottomTransition,
+                    VDialogTopTransition: VDialogTopTransition,
                     VFabTransition: VFabTransition,
+                    VFadeTransition: VFadeTransition,
+                    VMenuTransition: VMenuTransition,
+                    VScaleTransition: VScaleTransition,
+                    VScrollXTransition: VScrollXTransition,
+                    VScrollXReverseTransition: VScrollXReverseTransition,
+                    VScrollYTransition: VScrollYTransition,
+                    VScrollYReverseTransition: VScrollYReverseTransition,
+                    VSlideXTransition: VSlideXTransition,
+                    VSlideXReverseTransition: VSlideXReverseTransition,
+                    VSlideYTransition: VSlideYTransition,
+                    VSlideYReverseTransition: VSlideYReverseTransition,
+                    VTabReverseTransition: VTabReverseTransition,
+                    VTabTransition: VTabTransition,
+                    VExpandTransition: VExpandTransition,
+                    VExpandXTransition: VExpandXTransition
                 }
             });
 
@@ -19374,13 +19855,10 @@
             "use strict";
             __webpack_require__.r(__webpack_exports__);
 
-
             /* harmony import */ var _en__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./en */ "./src/locale/en.ts");
             /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "en", function() { return _en__WEBPACK_IMPORTED_MODULE_8__["default"]; });
 
 
-            /* harmony import */ var _zh_Hant__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./zh-Hant */ "./src/locale/zh-Hant.ts");
-            /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "zhHant", function() { return _zh_Hant__WEBPACK_IMPORTED_MODULE_38__["default"]; });
 
 
 
@@ -19424,1625 +19902,7 @@
 
             /***/ }),
 
-        /***/ "./src/locale/it.ts":
-        /*!**************************!*\
-  !*** ./src/locale/it.ts ***!
-  \**************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: 'Distintivo',
-                close: 'Chiudi',
-                dataIterator: {
-                    noResultsText: 'Nessun risultato trovato',
-                    loadingText: 'Caricamento in corso...'
-                },
-                dataTable: {
-                    itemsPerPageText: 'Righe per pagina:',
-                    ariaLabel: {
-                        sortDescending: 'Ordinati in ordine decrescente.',
-                        sortAscending: 'Ordinati in ordine crescente.',
-                        sortNone: 'Non ordinato.',
-                        activateNone: "Attiva per rimuovere l'ordinamento.",
-                        activateDescending: 'Attiva per ordinare in ordine decrescente.',
-                        activateAscending: 'Attiva per ordinare in ordine crescente.'
-                    },
-                    sortBy: 'Ordina per'
-                },
-                dataFooter: {
-                    itemsPerPageText: 'Elementi per pagina:',
-                    itemsPerPageAll: 'Tutti',
-                    nextPage: 'Pagina seguente',
-                    prevPage: 'Pagina precedente',
-                    firstPage: 'Pagina prima',
-                    lastPage: 'Pagina ultima',
-                    pageText: '{0}-{1} di {2}'
-                },
-                datePicker: {
-                    itemsSelected: '{0} selezionati',
-                    nextMonthAriaLabel: 'Il prossimo mese',
-                    nextYearAriaLabel: "L'anno prossimo",
-                    prevMonthAriaLabel: 'Il mese scorso',
-                    prevYearAriaLabel: "L'anno scorso"
-                },
-                noDataText: 'Nessun elemento disponibile',
-                carousel: {
-                    prev: 'Vista precedente',
-                    next: 'Prossima vista',
-                    ariaLabel: {
-                        delimiter: 'Carousel slide {0} of {1}'
-                    }
-                },
-                calendar: {
-                    moreEvents: '{0} di più'
-                },
-                fileInput: {
-                    counter: '{0} files',
-                    counterSize: '{0} files ({1} in totale)'
-                },
-                timePicker: {
-                    am: 'AM',
-                    pm: 'PM'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: 'Navigazione impaginazione',
-                        next: 'Pagina seguente',
-                        previous: 'Pagina precedente',
-                        page: 'Vai alla pagina {0}',
-                        currentPage: 'Pagina corrente, pagina {0}'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
-
-        /***/ "./src/locale/ja.ts":
-        /*!**************************!*\
-  !*** ./src/locale/ja.ts ***!
-  \**************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: 'バッジ',
-                close: '閉じる',
-                dataIterator: {
-                    noResultsText: '検索結果が見つかりません。',
-                    loadingText: '項目をロード中です...'
-                },
-                dataTable: {
-                    itemsPerPageText: '1ページあたりの行数：',
-                    ariaLabel: {
-                        sortDescending: '降順の並び替え。',
-                        sortAscending: '昇順の並び替え。',
-                        sortNone: 'ソートされていません。',
-                        activateNone: 'ソートを削除するには有効にしてください。',
-                        activateDescending: '降順の並び替えのためには有効にしてください。',
-                        activateAscending: '昇順のソートのためには有効にしてください。'
-                    },
-                    sortBy: 'ソート方式'
-                },
-                dataFooter: {
-                    itemsPerPageText: '1ページあたりの件数：',
-                    itemsPerPageAll: 'すべて',
-                    nextPage: '次のページ',
-                    prevPage: '前のページ',
-                    firstPage: '最初のページ',
-                    lastPage: '最後のページ',
-                    pageText: '{0}-{1} 件目 / {2}件'
-                },
-                datePicker: {
-                    itemsSelected: '{0}日付選択',
-                    nextMonthAriaLabel: '来月',
-                    nextYearAriaLabel: '来年',
-                    prevMonthAriaLabel: '前月',
-                    prevYearAriaLabel: '前年'
-                },
-                noDataText: 'データはありません。',
-                carousel: {
-                    prev: '前のビジュアル',
-                    next: '次のビジュアル',
-                    ariaLabel: {
-                        delimiter: 'カルーセルのスライド {0}件目 / {1}件'
-                    }
-                },
-                calendar: {
-                    moreEvents: 'さらに{0}'
-                },
-                fileInput: {
-                    counter: '{0} ファイル',
-                    counterSize: '{0} ファイル (合計 {1})'
-                },
-                timePicker: {
-                    am: 'AM',
-                    pm: 'PM'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: 'ページネーションナビゲーション',
-                        next: '次のページ',
-                        previous: '前のページ',
-                        page: '{0}ページ目に移動',
-                        currentPage: '現在のページ、ページ {0}'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
-
-        /***/ "./src/locale/ko.ts":
-        /*!**************************!*\
-  !*** ./src/locale/ko.ts ***!
-  \**************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: '배지',
-                close: '닫기',
-                dataIterator: {
-                    noResultsText: '일치하는 항목이 없습니다.',
-                    loadingText: '불러오는 중...'
-                },
-                dataTable: {
-                    itemsPerPageText: '페이지 당 행 수:',
-                    ariaLabel: {
-                        sortDescending: '내림차순 정렬.',
-                        sortAscending: '오름차순 정렬.',
-                        sortNone: '정렬하지 않음.',
-                        activateNone: '정렬을 취소하려면 활성화하세요.',
-                        activateDescending: '내림차순 정렬을 위해 활성화하세요.',
-                        activateAscending: '오름차순 정렬을 위해 활성화하세요.'
-                    },
-                    sortBy: 'Sort by'
-                },
-                dataFooter: {
-                    itemsPerPageText: '페이지 당 항목 수:',
-                    itemsPerPageAll: '전체',
-                    nextPage: '다음 페이지',
-                    prevPage: '이전 페이지',
-                    firstPage: '첫 페이지',
-                    lastPage: '마지막 페이지',
-                    pageText: '{2} 중 {0}-{1}'
-                },
-                datePicker: {
-                    itemsSelected: '{0} 선택됨',
-                    nextMonthAriaLabel: '다음 달',
-                    nextYearAriaLabel: '내년',
-                    prevMonthAriaLabel: '지난달',
-                    prevYearAriaLabel: '전년도'
-                },
-                noDataText: '데이터가 없습니다.',
-                carousel: {
-                    prev: '이전 화면',
-                    next: '다음 화면',
-                    ariaLabel: {
-                        delimiter: 'Carousel slide {0} of {1}'
-                    }
-                },
-                calendar: {
-                    moreEvents: '{0} 더보기'
-                },
-                fileInput: {
-                    counter: '{0} files',
-                    counterSize: '{0} files ({1} in total)'
-                },
-                timePicker: {
-                    am: '오전',
-                    pm: '오후'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: 'Pagination Navigation',
-                        next: '다음 페이지',
-                        previous: '이전 페이지',
-                        page: '고토 페이지 {0}',
-                        currentPage: '현재 페이지, 페이지 {0}'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
-
-        /***/ "./src/locale/lt.ts":
-        /*!**************************!*\
-  !*** ./src/locale/lt.ts ***!
-  \**************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: 'Ženklelis',
-                close: 'Uždaryti',
-                dataIterator: {
-                    noResultsText: 'Nerasta atitinkančių įrašų',
-                    loadingText: 'Kraunama...'
-                },
-                dataTable: {
-                    itemsPerPageText: 'Eilutės per puslapį:',
-                    ariaLabel: {
-                        sortDescending: 'Išrikiuota mažėjimo tvarka.',
-                        sortAscending: 'Išrikiuota didėjimo tvarka.',
-                        sortNone: 'Nerikiuota.',
-                        activateNone: 'Suaktyvinkite, jei norite rikiavimą pašalinti.',
-                        activateDescending: 'Suaktyvinkite, jei norite rikiuoti mažėjimo tvarka.',
-                        activateAscending: 'Suaktyvinkite, jei norite rikiuoti didėjimo tvarka.'
-                    },
-                    sortBy: 'Sort by'
-                },
-                dataFooter: {
-                    itemsPerPageText: 'Įrašai per puslapį:',
-                    itemsPerPageAll: 'Visi',
-                    nextPage: 'Kitas puslapis',
-                    prevPage: 'Ankstesnis puslapis',
-                    firstPage: 'Pirmas puslapis',
-                    lastPage: 'Paskutinis puslapis',
-                    pageText: '{0}-{1} iš {2}'
-                },
-                datePicker: {
-                    itemsSelected: '{0} pasirinkta',
-                    nextMonthAriaLabel: 'Kitą mėnesį',
-                    nextYearAriaLabel: 'Kitais metais',
-                    prevMonthAriaLabel: 'Praeita mėnesį',
-                    prevYearAriaLabel: 'Praeiti metai'
-                },
-                noDataText: 'Nėra duomenų',
-                carousel: {
-                    prev: 'Ankstesnioji skaidrė',
-                    next: 'Kita skaidrė',
-                    ariaLabel: {
-                        delimiter: 'Carousel slide {0} of {1}'
-                    }
-                },
-                calendar: {
-                    moreEvents: 'Daugiau {0}'
-                },
-                fileInput: {
-                    counter: '{0} failų',
-                    counterSize: '{0} failų ({1} iš viso)'
-                },
-                timePicker: {
-                    am: 'AM',
-                    pm: 'PM'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: 'Puslapio naršymas',
-                        next: 'Kitas puslapis',
-                        previous: 'Ankstesnis puslapis',
-                        page: 'Eiti į puslapį {0}',
-                        currentPage: 'Dabartinis puslapis, puslapis {0}'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
-
-        /***/ "./src/locale/lv.ts":
-        /*!**************************!*\
-  !*** ./src/locale/lv.ts ***!
-  \**************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: 'Žetons',
-                close: 'Aizvērt',
-                dataIterator: {
-                    noResultsText: 'Nekas netika atrasts',
-                    loadingText: 'Ielādē...'
-                },
-                dataTable: {
-                    itemsPerPageText: 'Rādīt lapā:',
-                    ariaLabel: {
-                        sortDescending: 'Sakārtots dilstošā secībā.',
-                        sortAscending: 'Sakārtots augošā secībā.',
-                        sortNone: 'Nav sakārtots.',
-                        activateNone: 'Aktivizēt, lai noņemtu kārtošanu.',
-                        activateDescending: 'Aktivizēt, lai sakārtotu dilstošā secībā.',
-                        activateAscending: 'Aktivizēt, lai sakārtotu augošā secībā.'
-                    },
-                    sortBy: 'Sort by'
-                },
-                dataFooter: {
-                    itemsPerPageText: 'Rādīt lapā:',
-                    itemsPerPageAll: 'Visu',
-                    nextPage: 'Nākamā lapa',
-                    prevPage: 'Iepriekšējā lapa',
-                    firstPage: 'Pirmā lapa',
-                    lastPage: 'Pēdējā lapa',
-                    pageText: '{0}-{1} no {2}'
-                },
-                datePicker: {
-                    itemsSelected: '{0} izvēlēts',
-                    nextMonthAriaLabel: 'Nākammēnes',
-                    nextYearAriaLabel: 'Nākamgad',
-                    prevMonthAriaLabel: 'Iepriekšējais mēnesis',
-                    prevYearAriaLabel: 'Iepriekšējais gads'
-                },
-                noDataText: 'Nav pieejamu datu',
-                carousel: {
-                    prev: 'Iepriekšējais slaids',
-                    next: 'Nākamais slaids',
-                    ariaLabel: {
-                        delimiter: 'Carousel slide {0} of {1}'
-                    }
-                },
-                calendar: {
-                    moreEvents: 'Vēl {0}'
-                },
-                fileInput: {
-                    counter: '{0} files',
-                    counterSize: '{0} files ({1} in total)'
-                },
-                timePicker: {
-                    am: 'AM',
-                    pm: 'PM'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: 'Navigācija paginationā',
-                        next: 'Nākamā lapa',
-                        previous: 'Iepriekšējā lapa',
-                        page: 'Iet uz lapu {0}',
-                        currentPage: 'Pašreizējā lapa, lapa {0}'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
-
-        /***/ "./src/locale/nl.ts":
-        /*!**************************!*\
-  !*** ./src/locale/nl.ts ***!
-  \**************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: 'insigne',
-                close: 'Sluiten',
-                dataIterator: {
-                    noResultsText: 'Geen overeenkomende resultaten gevonden',
-                    loadingText: 'Items aan het laden...'
-                },
-                dataTable: {
-                    itemsPerPageText: 'Rijen per pagina:',
-                    ariaLabel: {
-                        sortDescending: 'Aflopend gesorteerd.',
-                        sortAscending: 'Oplopend gesorteerd.',
-                        sortNone: 'Niet gesorteerd.',
-                        activateNone: 'Activeer om de sortering te verwijderen.',
-                        activateDescending: 'Activeer om aflopend te sorteren.',
-                        activateAscending: 'Activeer om oplopend te sorteren.'
-                    },
-                    sortBy: 'Sorteer volgens'
-                },
-                dataFooter: {
-                    itemsPerPageText: 'Aantal per pagina:',
-                    itemsPerPageAll: 'Alles',
-                    nextPage: 'Volgende pagina',
-                    prevPage: 'Vorige pagina',
-                    firstPage: 'Eerste pagina',
-                    lastPage: 'Laatste pagina',
-                    pageText: '{0}-{1} van {2}'
-                },
-                datePicker: {
-                    itemsSelected: '{0} geselecteerd',
-                    nextMonthAriaLabel: 'Volgende maand',
-                    nextYearAriaLabel: 'Volgend jaar',
-                    prevMonthAriaLabel: 'Vorige maand',
-                    prevYearAriaLabel: 'Vorig jaar'
-                },
-                noDataText: 'Geen gegevens beschikbaar',
-                carousel: {
-                    prev: 'Vorig beeld',
-                    next: 'Volgend beeld',
-                    ariaLabel: {
-                        delimiter: 'Carousel slide {0} of {1}'
-                    }
-                },
-                calendar: {
-                    moreEvents: '{0} meer'
-                },
-                fileInput: {
-                    counter: '{0} bestanden',
-                    counterSize: '{0} bestanden ({1} in totaal)'
-                },
-                timePicker: {
-                    am: 'AM',
-                    pm: 'PM'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: 'Paginanavigatie',
-                        next: 'Volgende pagina',
-                        previous: 'Vorige pagina',
-                        page: 'Ga naar pagina {0}',
-                        currentPage: 'Huidige pagina, pagina {0}'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
-
-        /***/ "./src/locale/no.ts":
-        /*!**************************!*\
-  !*** ./src/locale/no.ts ***!
-  \**************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: 'Skilt',
-                close: 'Lukk',
-                dataIterator: {
-                    noResultsText: 'Fant ingen matchende elementer.',
-                    loadingText: 'Laster elementer...'
-                },
-                dataTable: {
-                    itemsPerPageText: 'Rader per side:',
-                    ariaLabel: {
-                        sortDescending: 'Sortert synkende.',
-                        sortAscending: 'Sortert stigende.',
-                        sortNone: 'Ikke sortert.',
-                        activateNone: 'Aktiver for å fjerne sortering.',
-                        activateDescending: 'Aktiver for å sortere synkende.',
-                        activateAscending: 'Aktiver for å sortere stigende.'
-                    },
-                    sortBy: 'Sorter etter'
-                },
-                dataFooter: {
-                    itemsPerPageText: 'Elementer per side:',
-                    itemsPerPageAll: 'Alle',
-                    nextPage: 'Neste side',
-                    prevPage: 'Forrige side',
-                    firstPage: 'Første side',
-                    lastPage: 'Siste side',
-                    pageText: '{0}-{1} av {2}'
-                },
-                datePicker: {
-                    itemsSelected: '{0} valgt',
-                    nextMonthAriaLabel: 'Neste måned',
-                    nextYearAriaLabel: 'Neste år',
-                    prevMonthAriaLabel: 'Forrige måned',
-                    prevYearAriaLabel: 'Forrige år'
-                },
-                noDataText: 'Ingen data er tilgjengelig',
-                carousel: {
-                    prev: 'Forrige bilde',
-                    next: 'Neste bilde',
-                    ariaLabel: {
-                        delimiter: 'Karusellbilde {0} av {1}'
-                    }
-                },
-                calendar: {
-                    moreEvents: '{0} flere'
-                },
-                fileInput: {
-                    counter: '{0} filer',
-                    counterSize: '{0} filer ({1} totalt)'
-                },
-                timePicker: {
-                    am: 'AM',
-                    pm: 'PM'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: 'Paginasjonsnavigasjon',
-                        next: 'Neste side',
-                        previous: 'Forrige side',
-                        page: 'Gå til side {0}',
-                        currentPage: 'Gjeldende side, side {0}'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
-
-        /***/ "./src/locale/pl.ts":
-        /*!**************************!*\
-  !*** ./src/locale/pl.ts ***!
-  \**************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: 'Odznaka',
-                close: 'Zamknij',
-                dataIterator: {
-                    noResultsText: 'Nie znaleziono danych odpowiadających wyszukiwaniu',
-                    loadingText: 'Wczytywanie danych...'
-                },
-                dataTable: {
-                    itemsPerPageText: 'Wierszy na stronie:',
-                    ariaLabel: {
-                        sortDescending: 'Sortowanie malejąco. Kliknij aby zmienić.',
-                        sortAscending: 'Sortowanie rosnąco. Kliknij aby zmienić.',
-                        sortNone: 'Bez sortowania. Kliknij aby posortować rosnąco.',
-                        activateNone: 'Kliknij aby usunąć sortowanie.',
-                        activateDescending: 'Kliknij aby posortować malejąco.',
-                        activateAscending: 'Kliknij aby posortować rosnąco.'
-                    },
-                    sortBy: 'Sortuj według'
-                },
-                dataFooter: {
-                    itemsPerPageText: 'Pozycji na stronie:',
-                    itemsPerPageAll: 'Wszystkie',
-                    nextPage: 'Następna strona',
-                    prevPage: 'Poprzednia strona',
-                    firstPage: 'Pierwsza strona',
-                    lastPage: 'Ostatnia strona',
-                    pageText: '{0}-{1} z {2}'
-                },
-                datePicker: {
-                    itemsSelected: '{0} dat(y)',
-                    nextMonthAriaLabel: 'Następny miesiąc',
-                    nextYearAriaLabel: 'Następny rok',
-                    prevMonthAriaLabel: 'Poprzedni miesiąc',
-                    prevYearAriaLabel: 'Poprzedni rok'
-                },
-                noDataText: 'Brak danych',
-                carousel: {
-                    prev: 'Poprzedni obraz',
-                    next: 'Następny obraz',
-                    ariaLabel: {
-                        delimiter: 'Carousel slide {0} of {1}'
-                    }
-                },
-                calendar: {
-                    moreEvents: '{0} więcej'
-                },
-                fileInput: {
-                    counter: 'Liczba plików: {0}',
-                    counterSize: 'Liczba plików: {0} (łącznie {1})'
-                },
-                timePicker: {
-                    am: 'AM',
-                    pm: 'PM'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: 'Nawigacja paginacyjna',
-                        next: 'Następna strona',
-                        previous: 'Poprzednia strona',
-                        page: 'Idź do strony {0}',
-                        currentPage: 'Bieżąca strona, strona {0}'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
-
-        /***/ "./src/locale/pt.ts":
-        /*!**************************!*\
-  !*** ./src/locale/pt.ts ***!
-  \**************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: 'Distintivo',
-                close: 'Fechar',
-                dataIterator: {
-                    noResultsText: 'Nenhum dado encontrado',
-                    loadingText: 'Carregando itens...'
-                },
-                dataTable: {
-                    itemsPerPageText: 'Linhas por página:',
-                    ariaLabel: {
-                        sortDescending: 'Ordenado decrescente.',
-                        sortAscending: 'Ordenado crescente.',
-                        sortNone: 'Não ordenado.',
-                        activateNone: 'Ative para remover a ordenação.',
-                        activateDescending: 'Ative para ordenar decrescente.',
-                        activateAscending: 'Ative para ordenar crescente.'
-                    },
-                    sortBy: 'Ordenar por'
-                },
-                dataFooter: {
-                    itemsPerPageText: 'Itens por página:',
-                    itemsPerPageAll: 'Todos',
-                    nextPage: 'Próxima página',
-                    prevPage: 'Página anterior',
-                    firstPage: 'Primeira página',
-                    lastPage: 'Última página',
-                    pageText: '{0}-{1} de {2}'
-                },
-                datePicker: {
-                    itemsSelected: '{0} selecionado(s)',
-                    nextMonthAriaLabel: 'Próximo mês',
-                    nextYearAriaLabel: 'Próximo ano',
-                    prevMonthAriaLabel: 'Mês anterior',
-                    prevYearAriaLabel: 'Ano anterior'
-                },
-                noDataText: 'Não há dados disponíveis',
-                carousel: {
-                    prev: 'Visão anterior',
-                    next: 'Próxima visão',
-                    ariaLabel: {
-                        delimiter: 'Slide {0} de {1} do carrossel'
-                    }
-                },
-                calendar: {
-                    moreEvents: 'Mais {0}'
-                },
-                fileInput: {
-                    counter: '{0} arquivo(s)',
-                    counterSize: '{0} arquivo(s) ({1} no total)'
-                },
-                timePicker: {
-                    am: 'AM',
-                    pm: 'PM'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: 'Navegação de paginação',
-                        next: 'Próxima página',
-                        previous: 'Página anterior',
-                        page: 'Ir à página {0}',
-                        currentPage: 'Página atual, página {0}'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
-
-        /***/ "./src/locale/ro.ts":
-        /*!**************************!*\
-  !*** ./src/locale/ro.ts ***!
-  \**************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: 'Insignă',
-                close: 'Close',
-                dataIterator: {
-                    noResultsText: 'Nu au fost găsite înregistrări care să se potrivească',
-                    loadingText: 'Loading item...'
-                },
-                dataTable: {
-                    itemsPerPageText: 'Rânduri pe pagină:',
-                    ariaLabel: {
-                        sortDescending: 'Sorted descending.',
-                        sortAscending: 'Sorted ascending.',
-                        sortNone: 'Not sorted.',
-                        activateNone: 'Activate to remove sorting.',
-                        activateDescending: 'Activate to sort descending.',
-                        activateAscending: 'Activate to sort ascending.'
-                    },
-                    sortBy: 'Sort by'
-                },
-                dataFooter: {
-                    itemsPerPageText: 'Articole pe pagină:',
-                    itemsPerPageAll: 'Toate',
-                    nextPage: 'Pagina următoare',
-                    prevPage: 'Pagina anterioară',
-                    firstPage: 'Pagina prima',
-                    lastPage: 'Pagina ultima',
-                    pageText: '{0}-{1} din {2}'
-                },
-                datePicker: {
-                    itemsSelected: '{0} selectate',
-                    nextMonthAriaLabel: 'Luna viitoare',
-                    nextYearAriaLabel: 'Anul urmator',
-                    prevMonthAriaLabel: 'Luna trecută',
-                    prevYearAriaLabel: 'Anul precedent'
-                },
-                noDataText: 'Nu există date disponibile',
-                carousel: {
-                    prev: 'Anterior vizual',
-                    next: 'Următorul vizual',
-                    ariaLabel: {
-                        delimiter: 'Carousel slide {0} of {1}'
-                    }
-                },
-                calendar: {
-                    moreEvents: '{0} mai mult'
-                },
-                fileInput: {
-                    counter: '{0} files',
-                    counterSize: '{0} files ({1} in total)'
-                },
-                timePicker: {
-                    am: 'AM',
-                    pm: 'PM'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: 'Navigare prin paginare',
-                        next: 'Pagina următoare',
-                        previous: 'Pagina anterioară',
-                        page: 'Mergi la pagina {0}',
-                        currentPage: 'Pagina curentă, pagina {0}'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
-
-        /***/ "./src/locale/ru.ts":
-        /*!**************************!*\
-  !*** ./src/locale/ru.ts ***!
-  \**************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: 'знак',
-                close: 'Закрыть',
-                dataIterator: {
-                    noResultsText: 'Не найдено подходящих записей',
-                    loadingText: 'Запись загружается...'
-                },
-                dataTable: {
-                    itemsPerPageText: 'Строк на странице:',
-                    ariaLabel: {
-                        sortDescending: 'Упорядочено по убыванию.',
-                        sortAscending: 'Упорядочено по возрастанию.',
-                        sortNone: 'Не упорядочено.',
-                        activateNone: 'Активируйте, чтобы убрать сортировку.',
-                        activateDescending: 'Активируйте для упорядочивания убыванию.',
-                        activateAscending: 'Активируйте для упорядочивания по возрастанию.'
-                    },
-                    sortBy: 'Сортировать по'
-                },
-                dataFooter: {
-                    itemsPerPageText: 'Записей на странице:',
-                    itemsPerPageAll: 'Все',
-                    nextPage: 'Следующая страница',
-                    prevPage: 'Предыдущая страница',
-                    firstPage: 'Первая страница',
-                    lastPage: 'Последняя страница',
-                    pageText: '{0}-{1} из {2}'
-                },
-                datePicker: {
-                    itemsSelected: '{0} выбран',
-                    nextMonthAriaLabel: 'Следующий месяц',
-                    nextYearAriaLabel: 'Следующий год',
-                    prevMonthAriaLabel: 'Прошлый месяц',
-                    prevYearAriaLabel: 'Предыдущий год'
-                },
-                noDataText: 'Отсутствуют данные',
-                carousel: {
-                    prev: 'Предыдущий слайд',
-                    next: 'Следующий слайд',
-                    ariaLabel: {
-                        delimiter: 'Слайд {0} из {1}'
-                    }
-                },
-                calendar: {
-                    moreEvents: 'Еще {0}'
-                },
-                fileInput: {
-                    counter: 'Файлов: {0}',
-                    counterSize: 'Файлов: {0} (всего {1})'
-                },
-                timePicker: {
-                    am: 'AM',
-                    pm: 'PM'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: 'Навигация по страницам',
-                        next: 'Следующая страница',
-                        previous: 'Предыдущая страница',
-                        page: 'Перейти на страницу {0}',
-                        currentPage: 'Текущая страница, Страница {0}'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
-
-        /***/ "./src/locale/sk.ts":
-        /*!**************************!*\
-  !*** ./src/locale/sk.ts ***!
-  \**************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: 'Odznak',
-                close: 'Zavrieť',
-                dataIterator: {
-                    noResultsText: 'Neboli nájdené žiadne záznamy',
-                    loadingText: 'Načítavam položky...'
-                },
-                dataTable: {
-                    itemsPerPageText: 'Počet riadkov na stránku:',
-                    ariaLabel: {
-                        sortDescending: 'Zoradené zostupne.',
-                        sortAscending: 'Zoradené vzostupne.',
-                        sortNone: 'Nezoradené.',
-                        activateNone: 'Aktivujte na zrušenie triedenia.',
-                        activateDescending: 'Aktivujte na zoradenie zostupne.',
-                        activateAscending: 'Aktivujte na zoradenie vzostupne.'
-                    },
-                    sortBy: 'Zoradiť podľa'
-                },
-                dataFooter: {
-                    itemsPerPageText: 'Počet položiek na stránku:',
-                    itemsPerPageAll: 'Všetko',
-                    nextPage: 'Ďalšia stránka',
-                    prevPage: 'Predchádzajúca stránka',
-                    firstPage: 'Prvá stránka',
-                    lastPage: 'Posledná stránka',
-                    pageText: '{0}–{1} z {2}'
-                },
-                datePicker: {
-                    itemsSelected: '{0} vybrané',
-                    nextMonthAriaLabel: 'Ďalší mesiac',
-                    nextYearAriaLabel: 'Ďalší rok',
-                    prevMonthAriaLabel: 'Predchádzajúci mesiac',
-                    prevYearAriaLabel: 'Predchádzajúci rok'
-                },
-                noDataText: 'Nie sú dostupné žiadne dáta',
-                carousel: {
-                    prev: 'Predchádzajúci obrázok',
-                    next: 'Další obrázok',
-                    ariaLabel: {
-                        delimiter: 'Snímka {0} z {1}'
-                    }
-                },
-                calendar: {
-                    moreEvents: '{0} ďalších'
-                },
-                fileInput: {
-                    counter: '{0} súborov',
-                    counterSize: '{0} súborov ({1} celkom)'
-                },
-                timePicker: {
-                    am: 'AM',
-                    pm: 'PM'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: 'Navigácia stránkovania',
-                        next: 'Ďalšia stránka',
-                        previous: 'Predchádzajúca stránka',
-                        page: 'Ísť na stránku {0}',
-                        currentPage: 'Aktuálna stránka, stránka {0}'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
-
-        /***/ "./src/locale/sl.ts":
-        /*!**************************!*\
-  !*** ./src/locale/sl.ts ***!
-  \**************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: 'Značka',
-                close: 'Zapri',
-                dataIterator: {
-                    noResultsText: 'Ni iskanega zapisa',
-                    loadingText: 'Nalaganje...'
-                },
-                dataTable: {
-                    itemsPerPageText: 'Vrstic na stran:',
-                    ariaLabel: {
-                        sortDescending: 'Razvrščeno padajoče.',
-                        sortAscending: 'Razvrščeno naraščajoče.',
-                        sortNone: 'Ni razvrščeno.',
-                        activateNone: 'Aktivirajte za odstranitev razvrščanja.',
-                        activateDescending: 'Aktivirajte za padajoče razvrščanje.',
-                        activateAscending: 'Aktivirajte za naraščajoče razvrščanje.'
-                    },
-                    sortBy: 'Razvrsti po'
-                },
-                dataFooter: {
-                    itemsPerPageText: 'Predmetov na stran:',
-                    itemsPerPageAll: 'Vse',
-                    nextPage: 'Naslednja stran',
-                    prevPage: 'Prejšnja stran',
-                    firstPage: 'Prva stran',
-                    lastPage: 'Zadnja stran',
-                    pageText: '{0}-{1} od {2}'
-                },
-                datePicker: {
-                    itemsSelected: '{0} izbrano/-ih',
-                    nextMonthAriaLabel: 'Naslednji mesec',
-                    nextYearAriaLabel: 'Naslednje leto',
-                    prevMonthAriaLabel: 'Prejšnji mesec',
-                    prevYearAriaLabel: 'Prejšnje leto'
-                },
-                noDataText: 'Ni podatkov',
-                carousel: {
-                    prev: 'Prejšnji prikaz',
-                    next: 'Naslednji prikaz',
-                    ariaLabel: {
-                        delimiter: 'Carousel slide {0} of {1}'
-                    }
-                },
-                calendar: {
-                    moreEvents: 'Še {0}'
-                },
-                fileInput: {
-                    counter: '{0} datotek',
-                    counterSize: '{0} datotek ({1} skupno)'
-                },
-                timePicker: {
-                    am: 'AM',
-                    pm: 'PM'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: 'Navigacija po strani po strani',
-                        next: 'Naslednja stran',
-                        previous: 'Prejšnja stran',
-                        page: 'Pojdi na stran {0}',
-                        currentPage: 'Trenutna stran, stran {0}'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
-
-        /***/ "./src/locale/sr-Cyrl.ts":
-        /*!*******************************!*\
-  !*** ./src/locale/sr-Cyrl.ts ***!
-  \*******************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: 'Значка',
-                close: 'Close',
-                dataIterator: {
-                    noResultsText: 'Ни један запис није пронађен',
-                    loadingText: 'Loading item...'
-                },
-                dataTable: {
-                    itemsPerPageText: 'Редова по страници:',
-                    ariaLabel: {
-                        sortDescending: 'Sorted descending.',
-                        sortAscending: 'Sorted ascending.',
-                        sortNone: 'Not sorted.',
-                        activateNone: 'Activate to remove sorting.',
-                        activateDescending: 'Activate to sort descending.',
-                        activateAscending: 'Activate to sort ascending.'
-                    },
-                    sortBy: 'Sort by'
-                },
-                dataFooter: {
-                    itemsPerPageText: 'Ставки по страници:',
-                    itemsPerPageAll: 'Све',
-                    nextPage: 'Следећа страница',
-                    prevPage: 'Претходна страница',
-                    firstPage: 'Прва страница',
-                    lastPage: 'Последња страница',
-                    pageText: '{0}-{1} од {2}'
-                },
-                datePicker: {
-                    itemsSelected: '{0} одабрано',
-                    nextMonthAriaLabel: 'Следећег месеца',
-                    nextYearAriaLabel: 'Следеће године',
-                    prevMonthAriaLabel: 'Претходни мјесец',
-                    prevYearAriaLabel: 'Претходна година'
-                },
-                noDataText: 'Нема доступних података',
-                carousel: {
-                    prev: 'Превиоус висуал',
-                    next: 'Нект висуал',
-                    ariaLabel: {
-                        delimiter: 'Carousel slide {0} of {1}'
-                    }
-                },
-                calendar: {
-                    moreEvents: '{0} море'
-                },
-                fileInput: {
-                    counter: '{0} files',
-                    counterSize: '{0} files ({1} in total)'
-                },
-                timePicker: {
-                    am: 'AM',
-                    pm: 'PM'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: 'Навигација страницама',
-                        next: 'Следећа страница',
-                        previous: 'Претходна страница',
-                        page: 'Иди на страну {0}',
-                        currentPage: 'Тренутна страница, страница {0}'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
-
-        /***/ "./src/locale/sv.ts":
-        /*!**************************!*\
-  !*** ./src/locale/sv.ts ***!
-  \**************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: 'Bricka',
-                close: 'Stäng',
-                dataIterator: {
-                    noResultsText: 'Inga poster funna',
-                    loadingText: 'Laddar data...'
-                },
-                dataTable: {
-                    itemsPerPageText: 'Rader per sida:',
-                    ariaLabel: {
-                        sortDescending: 'Sorterat fallande.',
-                        sortAscending: 'Sorterat stigande.',
-                        sortNone: 'Osorterat.',
-                        activateNone: 'Aktivera för att ta bort sortering.',
-                        activateDescending: 'Aktivera för sortering fallande.',
-                        activateAscending: 'Aktivera för sortering stigande.'
-                    },
-                    sortBy: 'Sortera efter'
-                },
-                dataFooter: {
-                    itemsPerPageText: 'Objekt per sida:',
-                    itemsPerPageAll: 'Alla',
-                    nextPage: 'Nästa sida',
-                    prevPage: 'Föregående sida',
-                    firstPage: 'Första sidan',
-                    lastPage: 'Sista sidan',
-                    pageText: '{0}-{1} av {2}'
-                },
-                datePicker: {
-                    itemsSelected: '{0} markerade',
-                    nextMonthAriaLabel: 'Nästa månad',
-                    nextYearAriaLabel: 'Nästa år',
-                    prevMonthAriaLabel: 'Förra månaden',
-                    prevYearAriaLabel: 'Förra året'
-                },
-                noDataText: 'Ingen data tillgänglig',
-                carousel: {
-                    prev: 'Föregående vy',
-                    next: 'Nästa vy',
-                    ariaLabel: {
-                        delimiter: 'Carousel slide {0} of {1}'
-                    }
-                },
-                calendar: {
-                    moreEvents: '{0} fler'
-                },
-                fileInput: {
-                    counter: '{0} filer',
-                    counterSize: '{0} filer (av {1} totalt)'
-                },
-                timePicker: {
-                    am: 'AM',
-                    pm: 'PM'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: 'Pagination Navigation',
-                        next: 'Nästa sida',
-                        previous: 'Föregående sida',
-                        page: 'Gå till sidan {0}',
-                        currentPage: 'Aktuell sida, sida {0}'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
-
-        /***/ "./src/locale/th.ts":
-        /*!**************************!*\
-  !*** ./src/locale/th.ts ***!
-  \**************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: 'สัญลักษณ์',
-                close: 'ปิด',
-                dataIterator: {
-                    noResultsText: 'ไม่พบข้อมูลที่ค้นหา',
-                    loadingText: 'กำลังโหลดข้อมูล...'
-                },
-                dataTable: {
-                    itemsPerPageText: 'แถวต่อหน้า:',
-                    ariaLabel: {
-                        sortDescending: 'เรียงจากมากไปน้อยอยู่',
-                        sortAscending: 'เรียงจากน้อยไปมากอยู่',
-                        sortNone: 'ไม่ได้เรียงลำดับ',
-                        activateNone: 'กดเพื่อปิดการเรียงลำดับ',
-                        activateDescending: 'กดเพื่อเรียงจากมากไปน้อย',
-                        activateAscending: 'กดเพื่อเรียงจากน้อยไปมาก'
-                    },
-                    sortBy: 'เรียงตาม'
-                },
-                dataFooter: {
-                    itemsPerPageText: 'รายการต่อหน้า:',
-                    itemsPerPageAll: 'ทั้งหมด',
-                    nextPage: 'หน้าต่อไป',
-                    prevPage: 'หน้าที่แล้ว',
-                    firstPage: 'หน้าแรก',
-                    lastPage: 'หน้าสุดท้าย',
-                    pageText: '{0}-{1} จาก {2}'
-                },
-                datePicker: {
-                    itemsSelected: 'เลือก {0} วัน',
-                    nextMonthAriaLabel: 'เดือนถัดไป',
-                    nextYearAriaLabel: 'ปีถัดไป',
-                    prevMonthAriaLabel: 'เดือนก่อนหน้า',
-                    prevYearAriaLabel: 'ปีก่อนหน้า'
-                },
-                noDataText: 'ไม่มีข้อมูล',
-                carousel: {
-                    prev: 'ภาพก่อนหน้า',
-                    next: 'ภาพถัดไป',
-                    ariaLabel: {
-                        delimiter: 'ภาพสไลด์ที่ {0} จาก {1}'
-                    }
-                },
-                calendar: {
-                    moreEvents: 'มีอีก {0}'
-                },
-                fileInput: {
-                    counter: '{0} ไฟล์',
-                    counterSize: '{0} ไฟล์ (รวม {1})'
-                },
-                timePicker: {
-                    am: 'AM',
-                    pm: 'PM'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: 'การนำทางไปยังหน้า',
-                        next: 'หน้าต่อไป',
-                        previous: 'หน้าที่แล้ว',
-                        page: 'ไปที่หน้า {0}',
-                        currentPage: 'หน้าปัจจุบัน (หน้า {0})'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
-
-        /***/ "./src/locale/tr.ts":
-        /*!**************************!*\
-  !*** ./src/locale/tr.ts ***!
-  \**************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: 'rozet',
-                close: 'Kapat',
-                dataIterator: {
-                    noResultsText: 'Eşleşen veri bulunamadı',
-                    loadingText: 'Yükleniyor... Lütfen bekleyin.'
-                },
-                dataTable: {
-                    itemsPerPageText: 'Sayfa başına satır:',
-                    ariaLabel: {
-                        sortDescending: 'Z den A ya sıralı.',
-                        sortAscending: 'A dan Z ye sıralı.',
-                        sortNone: 'Sıralı değil. ',
-                        activateNone: 'Sıralamayı kaldırmak için etkinleştir.',
-                        activateDescending: 'Z den A ya sıralamak için etkinleştir.',
-                        activateAscending: 'A dan Z ye sıralamak için etkinleştir.'
-                    },
-                    sortBy: 'Sırala'
-                },
-                dataFooter: {
-                    itemsPerPageText: 'Sayfa başına satır:',
-                    itemsPerPageAll: 'Hepsi',
-                    nextPage: 'Sonraki sayfa',
-                    prevPage: 'Önceki sayfa',
-                    firstPage: 'İlk sayfa',
-                    lastPage: 'Son sayfa',
-                    pageText: '{0} - {1} arası, Toplam: {2} kayıt'
-                },
-                datePicker: {
-                    itemsSelected: '{0} öge seçildi',
-                    nextMonthAriaLabel: 'Gelecek ay',
-                    nextYearAriaLabel: 'Gelecek yıl',
-                    prevMonthAriaLabel: 'Geçtiğimiz ay',
-                    prevYearAriaLabel: 'Geçen yıl'
-                },
-                noDataText: 'Bu görünümde veri yok.',
-                carousel: {
-                    prev: 'Önceki görsel',
-                    next: 'Sonraki görsel',
-                    ariaLabel: {
-                        delimiter: 'Galeri sayfa {0} / {1}'
-                    }
-                },
-                calendar: {
-                    moreEvents: '{0} tane daha'
-                },
-                fileInput: {
-                    counter: '{0} dosya',
-                    counterSize: '{0} dosya (toplamda {1})'
-                },
-                timePicker: {
-                    am: 'AM',
-                    pm: 'PM'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: 'Sayfalandırma Navigasyonu',
-                        next: 'Sonraki sayfa',
-                        previous: 'Önceki sayfa',
-                        page: 'Sayfaya git {0}',
-                        currentPage: 'Geçerli Sayfa, Sayfa {0}'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
-
-        /***/ "./src/locale/uk.ts":
-        /*!**************************!*\
-  !*** ./src/locale/uk.ts ***!
-  \**************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: 'Знак',
-                close: 'Закрити',
-                dataIterator: {
-                    noResultsText: 'В результаті пошуку нічого не знайдено',
-                    loadingText: 'Завантаження...'
-                },
-                dataTable: {
-                    itemsPerPageText: 'Рядків на сторінці:',
-                    ariaLabel: {
-                        sortDescending: 'Відсортовано за спаданням.',
-                        sortAscending: 'Відсортовано за зростанням.',
-                        sortNone: 'Не відсортовано.',
-                        activateNone: 'Активувати, щоб видалити сортування.',
-                        activateDescending: 'Активувати, щоб відсортувати за спаданням.',
-                        activateAscending: 'Активувати, щоб відсортувати за зростанням.'
-                    },
-                    sortBy: 'Відсортувати за'
-                },
-                dataFooter: {
-                    itemsPerPageText: 'Елементів на сторінці:',
-                    itemsPerPageAll: 'Всі',
-                    nextPage: 'Наступна сторінка',
-                    prevPage: 'Попередня сторінка',
-                    firstPage: 'Перша сторінка',
-                    lastPage: 'Остання сторінка',
-                    pageText: '{0}-{1} з {2}'
-                },
-                datePicker: {
-                    itemsSelected: '{0} вибрано',
-                    nextMonthAriaLabel: 'Наступного місяця',
-                    nextYearAriaLabel: 'Наступного року',
-                    prevMonthAriaLabel: 'Попередній місяць',
-                    prevYearAriaLabel: 'Попередній рік'
-                },
-                noDataText: 'Немає даних для відображення',
-                carousel: {
-                    prev: 'Попередній слайд',
-                    next: 'Наступий слайд',
-                    ariaLabel: {
-                        delimiter: 'Слайд {0} з {1}'
-                    }
-                },
-                calendar: {
-                    moreEvents: 'Ще {0}'
-                },
-                fileInput: {
-                    counter: '{0} файлів',
-                    counterSize: '{0} файлів ({1} загалом)'
-                },
-                timePicker: {
-                    am: 'AM',
-                    pm: 'PM'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: 'Навігація по сторінках',
-                        next: 'Наступна сторінка',
-                        previous: 'Попередня сторінка',
-                        page: 'Перейти на сторінку {0}',
-                        currentPage: 'Поточна сторінка, Сторінка {0}'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
-
-        /***/ "./src/locale/zh-Hans.ts":
-        /*!*******************************!*\
-  !*** ./src/locale/zh-Hans.ts ***!
-  \*******************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: '徽章',
-                close: '关闭',
-                dataIterator: {
-                    noResultsText: '没有符合条件的结果',
-                    loadingText: '加载中……'
-                },
-                dataTable: {
-                    itemsPerPageText: '每页数目：',
-                    ariaLabel: {
-                        sortDescending: '：降序排列。',
-                        sortAscending: '：升序排列。',
-                        sortNone: '：未排序。',
-                        activateNone: '点击以移除排序。',
-                        activateDescending: '点击以降序排列。',
-                        activateAscending: '点击以升序排列。'
-                    },
-                    sortBy: '排序方式'
-                },
-                dataFooter: {
-                    itemsPerPageText: '每页数目：',
-                    itemsPerPageAll: '全部',
-                    nextPage: '下一页',
-                    prevPage: '上一页',
-                    firstPage: '首页',
-                    lastPage: '尾页',
-                    pageText: '{0}-{1} 共 {2}'
-                },
-                datePicker: {
-                    itemsSelected: '已选择 {0}',
-                    nextMonthAriaLabel: '下个月',
-                    nextYearAriaLabel: '明年',
-                    prevMonthAriaLabel: '前一个月',
-                    prevYearAriaLabel: '前一年'
-                },
-                noDataText: '没有数据',
-                carousel: {
-                    prev: '上一张',
-                    next: '下一张',
-                    ariaLabel: {
-                        delimiter: 'Carousel slide {0} of {1}'
-                    }
-                },
-                calendar: {
-                    moreEvents: '还有 {0} 项'
-                },
-                fileInput: {
-                    counter: '{0} 个文件',
-                    counterSize: '{0} 个文件（共 {1}）'
-                },
-                timePicker: {
-                    am: 'AM',
-                    pm: 'PM'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: '分页导航',
-                        next: '下一页',
-                        previous: '上一页',
-                        page: '转到页面 {0}',
-                        currentPage: '当前页 {0}'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
-
-        /***/ "./src/locale/zh-Hant.ts":
-        /*!*******************************!*\
-  !*** ./src/locale/zh-Hant.ts ***!
-  \*******************************/
-        /*! exports provided: default */
-        /***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-            "use strict";
-            __webpack_require__.r(__webpack_exports__);
-            /* harmony default export */ __webpack_exports__["default"] = ({
-                badge: '徽章',
-                close: '關閉',
-                dataIterator: {
-                    noResultsText: '沒有符合條件的結果',
-                    loadingText: '讀取中...'
-                },
-                dataTable: {
-                    itemsPerPageText: '每頁列數：',
-                    ariaLabel: {
-                        sortDescending: '：降序排列。',
-                        sortAscending: '：升序排列。',
-                        sortNone: '無排序方式。點擊以升序排列。',
-                        activateNone: '點擊以移除排序方式。',
-                        activateDescending: '點擊以降序排列。',
-                        activateAscending: '點擊以移除排序方式。'
-                    },
-                    sortBy: '排序方式'
-                },
-                dataFooter: {
-                    itemsPerPageText: '每頁項目：',
-                    itemsPerPageAll: '全部',
-                    nextPage: '下一頁',
-                    prevPage: '上一頁',
-                    firstPage: '第一頁',
-                    lastPage: '最後頁',
-                    pageText: '{2} 條中的 {0}~{1} 條'
-                },
-                datePicker: {
-                    itemsSelected: '已選擇 {0}',
-                    nextMonthAriaLabel: '下個月',
-                    nextYearAriaLabel: '明年',
-                    prevMonthAriaLabel: '前一個月',
-                    prevYearAriaLabel: '前一年'
-                },
-                noDataText: '沒有資料',
-                carousel: {
-                    prev: '上一張',
-                    next: '下一張',
-                    ariaLabel: {
-                        delimiter: 'Carousel slide {0} of {1}'
-                    }
-                },
-                calendar: {
-                    moreEvents: '還有其他 {0} 項'
-                },
-                fileInput: {
-                    counter: '{0} 個檔案',
-                    counterSize: '{0} 個檔案（共 {1}）'
-                },
-                timePicker: {
-                    am: 'AM',
-                    pm: 'PM'
-                },
-                pagination: {
-                    ariaLabel: {
-                        wrapper: '分頁導航',
-                        next: '下一頁',
-                        previous: '上一頁',
-                        page: '轉到頁面 {0}',
-                        currentPage: '當前頁 {0}'
-                    }
-                },
-                rating: {
-                    ariaLabel: {
-                        icon: 'Rating {0} of {1}'
-                    }
-                }
-            });
-
-            /***/ }),
 
         /***/ "./src/mixins/activatable/index.ts":
         /*!*****************************************!*\
@@ -23010,6 +21870,89 @@
                                 click: click
                             }
                         }, Array.isArray(content) ? content : [content]);
+                    }
+                }
+            }));
+
+            /***/ }),
+
+        /***/ "./src/mixins/picker/index.ts":
+        /*!************************************!*\
+  !*** ./src/mixins/picker/index.ts ***!
+  \************************************/
+        /*! exports provided: default */
+        /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony import */ var _components_VPicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../components/VPicker */ "./src/components/VPicker/index.ts");
+            /* harmony import */ var _colorable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../colorable */ "./src/mixins/colorable/index.ts");
+            /* harmony import */ var _mixins_elevatable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mixins/elevatable */ "./src/mixins/elevatable/index.ts");
+            /* harmony import */ var _themeable__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../themeable */ "./src/mixins/themeable/index.ts");
+            /* harmony import */ var _util_mixins__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../util/mixins */ "./src/util/mixins.ts");
+// Components
+            // Mixins
+
+
+
+            // Utils
+
+
+            /* harmony default export */ __webpack_exports__["default"] = (Object(_util_mixins__WEBPACK_IMPORTED_MODULE_4__["default"])(_colorable__WEBPACK_IMPORTED_MODULE_1__["default"], _mixins_elevatable__WEBPACK_IMPORTED_MODULE_2__["default"], _themeable__WEBPACK_IMPORTED_MODULE_3__["default"]
+                /* @vue/component */
+            ).extend({
+                name: 'picker',
+                props: {
+                    flat: Boolean,
+                    fullWidth: Boolean,
+                    headerColor: String,
+                    landscape: Boolean,
+                    noTitle: Boolean,
+                    width: {
+                        type: [Number, String],
+                        default: 290
+                    }
+                },
+                methods: {
+                    genPickerTitle: function genPickerTitle() {
+                        return null;
+                    },
+                    genPickerBody: function genPickerBody() {
+                        return null;
+                    },
+                    genPickerActionsSlot: function genPickerActionsSlot() {
+                        return this.$scopedSlots.default ? this.$scopedSlots.default({
+                            save: this.save,
+                            cancel: this.cancel
+                        }) : this.$slots.default;
+                    },
+                    genPicker: function genPicker(staticClass) {
+                        var children = [];
+
+                        if (!this.noTitle) {
+                            var title = this.genPickerTitle();
+                            title && children.push(title);
+                        }
+
+                        var body = this.genPickerBody();
+                        body && children.push(body);
+                        children.push(this.$createElement('template', {
+                            slot: 'actions'
+                        }, [this.genPickerActionsSlot()]));
+                        return this.$createElement(_components_VPicker__WEBPACK_IMPORTED_MODULE_0__["default"], {
+                            staticClass: staticClass,
+                            props: {
+                                color: this.headerColor || this.color,
+                                dark: this.dark,
+                                elevation: this.elevation,
+                                flat: this.flat,
+                                fullWidth: this.fullWidth,
+                                landscape: this.landscape,
+                                light: this.light,
+                                width: this.width,
+                                noTitle: this.noTitle
+                            }
+                        }, children);
                     }
                 }
             }));
@@ -27318,6 +26261,81 @@ let all = factory().extend({
 
             /***/ }),
 
+        /***/ "./src/util/dateTimeUtils.ts":
+        /*!***********************************!*\
+  !*** ./src/util/dateTimeUtils.ts ***!
+  \***********************************/
+        /*! exports provided: weekNumber, isLeapYear */
+        /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+            "use strict";
+            __webpack_require__.r(__webpack_exports__);
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "weekNumber", function() { return weekNumber; });
+            /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isLeapYear", function() { return isLeapYear; });
+            function createUTCDate(year, month, day) {
+                if (month === void 0) {
+                    month = 0;
+                }
+
+                if (day === void 0) {
+                    day = 1;
+                }
+
+                var date;
+
+                if (year < 100 && year >= 0) {
+                    date = new Date(Date.UTC(year, month, day));
+
+                    if (isFinite(date.getUTCFullYear())) {
+                        date.setUTCFullYear(year);
+                    }
+                } else {
+                    date = new Date(Date.UTC(year, month, day));
+                }
+
+                return date;
+            }
+
+            function firstWeekOffset(year, firstDayOfWeek, firstDayOfYear) {
+                var firstWeekDayInFirstWeek = 7 + firstDayOfWeek - firstDayOfYear;
+                var firstWeekDayOfYear = (7 + createUTCDate(year, 0, firstWeekDayInFirstWeek).getUTCDay() - firstDayOfWeek) % 7;
+                return -firstWeekDayOfYear + firstWeekDayInFirstWeek - 1;
+            }
+
+            function dayOfYear(year, month, day, firstDayOfWeek) {
+                var dayOfYear = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334][month];
+
+                if (month > 1 && isLeapYear(year)) {
+                    dayOfYear++;
+                }
+
+                return dayOfYear + day;
+            }
+
+            function weeksInYear(year, firstDayOfWeek, firstDayOfYear) {
+                var weekOffset = firstWeekOffset(year, firstDayOfWeek, firstDayOfYear);
+                var weekOffsetNext = firstWeekOffset(year + 1, firstDayOfWeek, firstDayOfYear);
+                var daysInYear = isLeapYear(year) ? 366 : 365;
+                return (daysInYear - weekOffset + weekOffsetNext) / 7;
+            }
+
+            function weekNumber(year, month, day, firstDayOfWeek, localeFirstDayOfYear) {
+                var weekOffset = firstWeekOffset(year, firstDayOfWeek, localeFirstDayOfYear);
+                var week = Math.ceil((dayOfYear(year, month, day, firstDayOfWeek) - weekOffset) / 7);
+
+                if (week < 1) {
+                    return week + weeksInYear(year - 1, firstDayOfWeek, localeFirstDayOfYear);
+                } else if (week > weeksInYear(year, firstDayOfWeek, localeFirstDayOfYear)) {
+                    return week - weeksInYear(year, firstDayOfWeek, localeFirstDayOfYear);
+                } else {
+                    return week;
+                }
+            }
+            function isLeapYear(year) {
+                return year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
+            }
+
+            /***/ }),
 
         /***/ "./src/util/dedupeModelListeners.ts":
         /*!******************************************!*\
