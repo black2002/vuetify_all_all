@@ -1,12 +1,12 @@
 {
   "_args": [
     [
-      "vuetify@2.3.21",
+      "vuetify_all_all",
       "C:\\Code\\znizhki"
     ]
   ],
-  "_from": "vuetify@2.3.21",
-  "_id": "vuetify@2.3.21",
+  "_from": "vuetify_all_all",
+  "_id": "vuetify_all_all",
   "_inBundle": false,
   "_integrity": "sha512-c9FOjkpVPDoIim88wbfqSIuCsH3jtgQQBC1iMW+ZFxf/Bj+d73HySL2LhEnZwAQT7XTAUGfad4aLPfcNZzK5YQ==",
   "_location": "/vuetify_all_all",
