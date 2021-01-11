@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c90a291f-5501-4911-92a9-9aac05da3308" name="Default" comment="" />
+    <list default="true" id="c90a291f-5501-4911-92a9-9aac05da3308" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/dist/vuetify.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/vuetify.min.css" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="3335" />
+    <option name="totalTimeSeconds" value="3556" />
     <option name="idleThresholdMs" value="320000" />
   </component>
   <component name="FileEditorManager">
@@ -18,7 +20,7 @@
       <file leaf-file-name="lib.d.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/types/lib.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state>
               <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
               <folding>
                 <element signature="e#92#146#0" expanded="true" />
@@ -27,20 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vuetify.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="vuetify.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dist/vuetify.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
+            <state relative-caret-position="17">
               <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vuetify.min.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dist/vuetify.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1997">
-              <caret line="1602" lean-forward="true" selection-start-line="1602" selection-end-line="1602" />
             </state>
           </provider>
         </entry>
@@ -711,7 +704,7 @@
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="493">
-              <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+              <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -725,6 +718,7 @@
       <find>animate</find>
       <find>\}  .v-a</find>
       <find>navigatio</find>
+      <find>overlay</find>
     </findStrings>
     <replaceStrings>
       <replace>\}\n\.</replace>
@@ -850,7 +844,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12099000" />
+    <option name="totallyTimeSpent" value="12450000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1095,7 +1089,7 @@
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
-          <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1104,7 +1098,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/types/lib.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state>
           <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
           <folding>
             <element signature="e#92#146#0" expanded="true" />
@@ -1765,17 +1759,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/vuetify.css">
+    <entry file="file://$PROJECT_DIR$/dist/vuetify.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
+        <state>
+          <caret column="191896" selection-end-column="191896" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/vuetify.min.css">
+    <entry file="file://$PROJECT_DIR$/dist/vuetify.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1997">
-          <caret line="1602" lean-forward="true" selection-start-line="1602" selection-end-line="1602" />
+        <state relative-caret-position="17">
+          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
         </state>
       </provider>
     </entry>
